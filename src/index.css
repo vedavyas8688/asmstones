@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+:root {
+  --color-ink: #061f33;
+  --color-text: #48515f;
+  --color-muted: #777f8c;
+  --color-accent: #d69a3d;
+  --color-accent-dark: #b77c25;
+  --color-accent-strong: #ff463b;
+  --color-deep: #0b1b24;
+  --color-paper: #ffffff;
+  --color-soft: #f6f8fb;
+  --color-line: #e7e9ee;
+  --color-tile: #dddddd;
+  --color-logo: #b89511;
+  --shadow-premium: 0 28px 70px rgba(8, 22, 33, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-paper);
+  color: var(--color-text);
+  font-family: Poppins, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main > section + section {
+  margin-top: 15px;
+}
+
+main > section:not(:first-child) {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 1024px) {
+  main > section:not(:first-child) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.premium-hover-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-accent);
+  color: #ffffff;
+  transition:
+    transform 280ms ease,
+    background-color 280ms ease;
+}
+
+.premium-hover-button::before {
+  content: '';
+  position: absolute;
+  inset: -78% -8% auto;
+  height: 92%;
+  z-index: -1;
+  background: #101417;
+  border-radius: 0 0 50% 50%;
+  transform: translateY(-64%);
+  transition: transform 360ms ease;
+}
+
+.premium-hover-button:hover {
+  transform: translateY(-2px);
+}
+
+.premium-hover-button:hover::before {
+  transform: translateY(0);
+}
