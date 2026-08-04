@@ -2,26 +2,13 @@ import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import FaqSection from '../components/sections/FaqSection'
-import { images, quarries } from '../data/siteContent'
-
-const quarryDetailImages = {
-  chamarajanagar: [
-    images.quarrySunset,
-    images.serviceSlabs,
-    images.serviceBlocks,
-    images.heroQuarry,
-    images.quarryDetail,
-    images.blockClose,
-  ],
-  khammam: [images.serviceSlabs],
-  thalavadi: [images.heroQuarry],
-}
+import { quarries, quarryImages } from '../data/siteContent'
 
 function QuarryDetail() {
   const { id } = useParams()
   const quarry = quarries.find((item) => item.id === id)
   const [sliderState, setSliderState] = useState({ quarryId: id, imageIndex: 0 })
-  const sliderImages = quarry ? quarryDetailImages[quarry.id] || [quarry.image] : []
+  const sliderImages = quarry ? quarryImages[quarry.id] || [quarry.image] : []
   const activeImage = sliderState.quarryId === id ? sliderState.imageIndex : 0
 
   useEffect(() => {

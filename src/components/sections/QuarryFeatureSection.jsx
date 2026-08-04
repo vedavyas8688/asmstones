@@ -1,12 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { images, quarries } from '../../data/siteContent'
-
-const quarryFeatureImages = {
-  chamarajanagar: images.quarrySunset,
-  khammam: images.serviceSlabs,
-  thalavadi: images.heroQuarry,
-}
+import { quarries, quarryFeatureImages } from '../../data/siteContent'
 
 function QuarryFeatureSection() {
   return (

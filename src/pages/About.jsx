@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Gem, Handshake, PackageCheck, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/sections/PageHero'
-import { aboutPoints, images } from '../data/siteContent'
+import { aboutPoints, images, pageBanners } from '../data/siteContent'
 
 const quarryAdvantages = [
   {
@@ -31,7 +31,7 @@ const commitments = [
 function About() {
   return (
     <main>
-      <PageHero title="About Us" image={images.quarryWide} />
+      <PageHero title="About Us" image={pageBanners.about} />
       <section className="bg-white px-6 py-20 lg:py-32">
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
           <img className="aspect-[1.42/1] w-full max-w-[620px] justify-self-end object-cover" src={images.serviceSlabs} alt="Premium granite block in warehouse" decoding="async" />

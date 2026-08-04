@@ -19,7 +19,7 @@ function FloatingContact() {
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3 sm:bottom-7 sm:right-7">
       <a
-        className="grid size-14 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_16px_34px_rgba(0,0,0,0.22)] transition hover:-translate-y-1"
+        className="grid size-14 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_16px_34px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:bg-[#1ebe5d]"
         href={`https://wa.me/${internationalPhone}`}
         aria-label="Chat on WhatsApp"
         target="_blank"

@@ -1,7 +1,6 @@
-import { ArrowUpRight, Mail, Phone } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import FaqSection from '../components/sections/FaqSection'
-import PageHero from '../components/sections/PageHero'
-import { contactLocations, images, site } from '../data/siteContent'
+import { contactLocations, images, quarries, site } from '../data/siteContent'
 
 function ContactUs() {
   const handleSubmit = (event) => {
@@ -10,66 +9,88 @@ function ContactUs() {
   }
 
   return (
-    <main>
-      <PageHero title="Contact Us" image={images.quarryDetail} />
-      <section className="bg-white px-6 py-12 lg:py-16">
-        <div className="mx-auto w-full max-w-[1120px]">
-          <div className="mb-10 grid gap-8 md:grid-cols-2 lg:mb-12">
-            <a
-              className="mx-auto inline-grid grid-cols-[4rem_1fr] items-center gap-4 text-[var(--color-ink)]"
-              href={`mailto:${site.email}`}
-            >
-              <Mail size={42} strokeWidth={2.6} />
-              <span>
-                <span className="block text-3xl font-semibold leading-tight lg:text-4xl">Email</span>
-                <strong className="mt-2 block text-sm font-medium text-[var(--color-text)]">{site.email}</strong>
-              </span>
-            </a>
-            <a
-              className="mx-auto inline-grid grid-cols-[4rem_1fr] items-center gap-4 text-[var(--color-ink)]"
-              href={`tel:${site.phone.replace(/\s/g, '')}`}
-            >
-              <Phone size={42} strokeWidth={2.6} />
-              <span>
-                <span className="block text-3xl font-semibold leading-tight lg:text-4xl">Phone Number</span>
-                <strong className="mt-2 block text-sm font-medium text-[var(--color-text)]">{site.phone}</strong>
-              </span>
-            </a>
-          </div>
+    <main className="bg-white">
+      <section className="px-6 py-12 lg:py-20">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-14">
+          <img
+            className="aspect-[0.86/1] w-full object-cover shadow-sm max-lg:max-h-[520px]"
+            src={images.quarryDetail}
+            alt="ASM granite quarry blocks"
+            decoding="async"
+          />
 
-          <div className="grid gap-5 md:grid-cols-3">
-            {contactLocations.map((location) => (
-              <article key={location.name}>
-                <iframe
-                  className="aspect-[1.45] w-full border border-[var(--color-line)]"
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&output=embed`}
-                  title={`${location.name} map`}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                <strong className="mx-auto mt-5 block max-w-sm text-center text-xl font-extrabold leading-8 text-[var(--color-ink)]">
-                  {location.name}
-                </strong>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div>
+            <h1 className="text-[3.4rem] font-extrabold leading-none text-black sm:text-[5rem] lg:text-[6rem]">
+              Contact Us
+            </h1>
 
-      <section className="bg-white px-6 py-12 lg:py-16">
-        <div className="mx-auto w-full max-w-[1120px]">
-          <form onSubmit={handleSubmit}>
-            <h2 className="mb-10 text-4xl font-semibold leading-tight text-[#050711] lg:text-5xl">Send us a message</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              <input className="min-h-16 border border-[var(--color-accent)] px-6 text-base outline-none transition focus:border-[var(--color-accent-dark)]" name="name" placeholder="Name" required />
-              <input className="min-h-16 border border-[var(--color-accent)] px-6 text-base outline-none transition focus:border-[var(--color-accent-dark)]" name="email" type="email" placeholder="Email" required />
-              <input className="min-h-16 border border-[var(--color-accent)] px-6 text-base outline-none transition focus:border-[var(--color-accent-dark)]" name="phone" placeholder="Phone" />
+            <div className="mt-10 grid gap-10 border-2 border-black p-7 sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:p-12">
+              <form onSubmit={handleSubmit} className="grid gap-7">
+                <label className="grid gap-3 text-lg text-black">
+                  Full Name
+                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="name" required />
+                </label>
+                <label className="grid gap-3 text-lg text-black">
+                  E-mail
+                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="email" type="email" required />
+                </label>
+                <label className="grid gap-3 text-lg text-black">
+                  Phone Number
+                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="phone" type="tel" required />
+                </label>
+                <label className="grid gap-3 text-lg text-black">
+                  Quarry / Stone
+                  <select className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="quarry" defaultValue="" required>
+                    <option value="" disabled>
+                      Select quarry
+                    </option>
+                    {quarries.map((quarry) => (
+                      <option value={quarry.title} key={quarry.id}>
+                        {quarry.title}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className="grid gap-3 text-lg text-black">
+                  Message
+                  <textarea className="min-h-20 resize-y border-0 border-b-2 border-black bg-transparent outline-none" name="message" required />
+                </label>
+                <button className="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-8 text-lg font-semibold text-white transition hover:bg-[var(--color-accent)]" type="submit">
+                  Contact Us <ArrowUpRight size={18} />
+                </button>
+              </form>
+
+              <aside className="grid content-start gap-8 text-black">
+                <div>
+                  <h2 className="mb-3 text-2xl font-semibold">Contact</h2>
+                  <a className="flex items-center gap-3 text-lg text-[var(--color-text)] transition hover:text-black" href={`mailto:${site.email}`}>
+                    <Mail size={20} /> {site.email}
+                  </a>
+                  <a className="mt-3 flex items-center gap-3 text-lg text-[var(--color-text)] transition hover:text-black" href={`tel:${site.phone.replace(/\D/g, '')}`}>
+                    <Phone size={20} /> {site.phone}
+                  </a>
+                </div>
+
+                <div>
+                  <h2 className="mb-3 text-2xl font-semibold">Based in</h2>
+                  <div className="grid gap-3">
+                    {contactLocations.map((location) => (
+                      <a
+                        className="flex items-start gap-3 text-base leading-7 text-[var(--color-text)] transition hover:text-black"
+                        href={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={location.name}
+                      >
+                        <MapPin className="mt-1 shrink-0" size={18} />
+                        {location.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </aside>
             </div>
-            <textarea className="mt-7 w-full resize-y border border-[var(--color-accent)] px-6 py-5 text-base outline-none transition focus:border-[var(--color-accent-dark)]" name="message" placeholder="Your text here..." rows="8" required />
-            <button type="submit" className="mt-8 inline-flex items-center gap-3 border-b border-black pb-3 text-xl font-medium text-black">
-              Submit Now <ArrowUpRight size={15} />
-            </button>
-          </form>
+          </div>
         </div>
       </section>
 

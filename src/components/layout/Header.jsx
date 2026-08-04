@@ -1,7 +1,7 @@
 import { Menu, Phone, X } from 'lucide-react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../../assets/images/sri-adieseshu-minerals-logo.svg'
+import logo from '../../assets/logos/sri-adieseshu-minerals-logo.png'
 import { navItems, site } from '../../data/siteContent'
 
 function scrollToPageTop() {
@@ -11,7 +11,7 @@ function scrollToPageTop() {
 function Logo() {
   return (
     <NavLink to="/" onClick={scrollToPageTop} className="block shrink-0" aria-label="Sri Adiseshu home">
-      <img className="w-[190px] sm:w-[218px] lg:w-[256px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
+      <img className="w-[205px] sm:w-[235px] lg:w-[276px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
     </NavLink>
   )
 }
@@ -21,7 +21,7 @@ function Header() {
   const phoneHref = `tel:${site.phone.replace(/\s/g, '')}`
 
   return (
-    <header className="sticky top-0 z-50 h-[82px] bg-white lg:h-[120px]">
+    <header className="sticky top-0 z-50 h-[96px] bg-white lg:h-[120px]">
       <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-8 lg:justify-start lg:px-[42px]">
         <Logo />
         <button
@@ -33,7 +33,7 @@ function Header() {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
         <nav
-          className={`absolute left-0 right-0 top-[82px] flex-col bg-white shadow-2xl lg:static lg:ml-[100px] lg:flex lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:shadow-none xl:ml-[150px] xl:gap-10 ${
+          className={`absolute left-0 right-0 top-[96px] flex-col bg-white shadow-2xl lg:static lg:ml-[100px] lg:flex lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:shadow-none xl:ml-[150px] xl:gap-10 ${
             open ? 'flex' : 'hidden'
           }`}
         >

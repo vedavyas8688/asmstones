@@ -1,6 +1,7 @@
-import { Camera, Mail, MapPin, MessageCircle, Phone, Share2, Users } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/images/sri-adieseshu-minerals-logo.svg'
+import logo from '../../assets/logos/sri-adieseshu-minerals-logo.png'
 import { navItems, quarries, services, site } from '../../data/siteContent'
 
 const contactLinks = [
@@ -22,10 +23,9 @@ const contactLinks = [
 ]
 
 const socialLinks = [
-  { label: 'Facebook', href: '#', icon: Users },
-  { label: 'Instagram', href: '#', icon: Camera },
-  { label: 'LinkedIn', href: '#', icon: Share2 },
-  { label: 'X', href: '#', icon: MessageCircle },
+  { label: 'Facebook', href: '#', icon: FaFacebookF },
+  { label: 'Instagram', href: '#', icon: FaInstagram },
+  { label: 'YouTube', href: '#', icon: FaYoutube },
 ]
 
 function Footer() {
@@ -127,9 +127,8 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-6 py-6">
-        <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-3 text-sm font-semibold text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright 2026 Sri Adiseshu Minerals Pvt Ltd. All rights reserved.</p>
-          <p>Absolute Black Granite | Blocks | Slabs | Export Supply</p>
+        <div className="mx-auto w-full max-w-[1320px] text-sm font-semibold text-white/55">
+          <p>&copy; 2026 Sri Adiseshu Minerals Pvt Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

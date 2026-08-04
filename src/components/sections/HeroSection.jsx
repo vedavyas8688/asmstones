@@ -1,5 +1,6 @@
 import { ArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import asmLogo from '../../assets/logos/asmstones-logo-1.webp'
 import { images } from '../../data/siteContent'
 
 function HeroSection() {
@@ -9,7 +10,13 @@ function HeroSection() {
       style={{ backgroundImage: `url(${images.sunsetBlocks})` }}
     >
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 pt-[118px] pb-16 sm:px-8 sm:pt-[150px] lg:px-[122px] lg:pt-[213px]">
-        <p className="mb-6 text-xs font-bold uppercase tracking-[0.28em] text-[var(--color-accent)] sm:text-sm lg:mb-[28px] lg:text-[14px] lg:tracking-[0.38em]">
+        <img
+          className="absolute left-5 top-[42px] size-16 object-contain sm:left-8 sm:top-[54px] sm:size-20 lg:left-[122px] lg:top-[112px] lg:size-24"
+          src={asmLogo}
+          alt="Sri Adiseshu Minerals logo"
+          decoding="async"
+        />
+        <p className="mb-6 text-xs font-bold uppercase tracking-[0.28em] text-white sm:text-sm sm:text-[var(--color-accent)] lg:mb-[28px] lg:text-[14px] lg:tracking-[0.38em]">
           Sri Adiseshu Minerals Pvt Ltd
         </p>
         <h1 className="max-w-[18rem] text-[2.15rem] font-extrabold leading-[1.14] text-white sm:max-w-3xl sm:text-5xl lg:max-w-[760px] lg:text-[54px]">

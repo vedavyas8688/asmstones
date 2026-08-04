@@ -1,11 +1,11 @@
 import FaqSection from '../components/sections/FaqSection'
 import PageHero from '../components/sections/PageHero'
-import { images } from '../data/siteContent'
+import { pageBanners } from '../data/siteContent'
 
 function FAQ() {
   return (
     <main>
-      <PageHero title="Faq's" image={images.heroTexture} />
+      <PageHero title="Faq's" image={pageBanners.faq} />
       <FaqSection columns />
     </main>
   )

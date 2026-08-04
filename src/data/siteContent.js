@@ -1,21 +1,58 @@
-import heroQuarry from '../assets/optimized/quarry-hero.webp'
-import aboutStone from '../assets/optimized/about-stone.webp'
-import quarryAerial from '../assets/optimized/quarry-aerial.webp'
-import quarryWide from '../assets/optimized/quarry-wide.webp'
-import serviceBlocks from '../assets/optimized/service-blocks.webp'
-import serviceSlabs from '../assets/optimized/service-slabs.webp'
-import serviceCustom from '../assets/optimized/service-custom.webp'
-import blockClose from '../assets/optimized/block-close.webp'
-import sunsetBlocks from '../assets/optimized/sunset-blocks.webp'
-import quarrySunset from '../assets/optimized/quarry-sunset.webp'
-import quarryDetail from '../assets/optimized/quarry-detail.webp'
-import heroTexture from '../assets/optimized/hero-texture.webp'
+import heroQuarry from '../assets/images/ChamarajanagarQuarry/quarry-hero.webp'
+import aboutStone from '../assets/images/ChamarajanagarQuarry/about-stone.webp'
+import quarryAerial from '../assets/images/ChamarajanagarQuarry/quarry-aerial.webp'
+import quarryWide from '../assets/images/ChamarajanagarQuarry/quarry-wide.webp'
+import serviceBlocks from '../assets/images/ChamarajanagarQuarry/service-blocks.webp'
+import serviceSlabs from '../assets/images/ChamarajanagarQuarry/service-slabs.webp'
+import serviceCustom from '../assets/images/ChamarajanagarQuarry/service-custom.webp'
+import blockClose from '../assets/images/ChamarajanagarQuarry/block-close.webp'
+import sunsetBlocks from '../assets/images/ChamarajanagarQuarry/sunset-blocks.webp'
+import quarrySunset from '../assets/images/ChamarajanagarQuarry/quarry-sunset.webp'
+import quarryDetail from '../assets/images/ChamarajanagarQuarry/quarry-detail.webp'
+import heroTexture from '../assets/images/ChamarajanagarQuarry/hero-texture.webp'
+import khammamGallery15 from '../assets/images/KhammamQuarry/quary2 (15).webp'
+import khammamGallery17 from '../assets/images/KhammamQuarry/quary2 (17).webp'
+import khammamGallery18 from '../assets/images/KhammamQuarry/quary2 (18).webp'
+import khammamGallery19 from '../assets/images/KhammamQuarry/quary2 (19).webp'
+import khammamGallery21 from '../assets/images/KhammamQuarry/quary2 (21).webp'
+import khammamGallery22 from '../assets/images/KhammamQuarry/quary2 (22).webp'
+import khammamGallery23 from '../assets/images/KhammamQuarry/quary2 (23).webp'
+import khammamGallery24 from '../assets/images/KhammamQuarry/quary2 (24).webp'
+import khammamGallery25 from '../assets/images/KhammamQuarry/quary2 (25).webp'
+import khammamBlackGraniteDisplay from '../assets/images/KhammamQuarry/khammam-black-granite-display.webp'
+import khammamAboutSlabBanner from '../assets/images/KhammamQuarry/khammam-about-slab-banner.webp'
+import khammamSlabsYard from '../assets/images/KhammamQuarry/khammam-slabs-yard.webp'
+import khammamCustomProcessing from '../assets/images/KhammamQuarry/quary2-16.webp'
+import khammamFeature from '../assets/images/KhammamQuarry/quary2-20.webp'
+import thalavadiStoneTexture from '../assets/images/ThalavadiQuarry/thalavadi-stone-texture.webp'
 
 const galleryImages = Object.entries(
-  import.meta.glob('../assets/optimized/gallery/*.webp', { eager: true, import: 'default' }),
+  import.meta.glob('../assets/images/ChamarajanagarQuarry/gallery-*.webp', { eager: true, import: 'default' }),
 )
   .sort(([first], [second]) => first.localeCompare(second))
   .map(([, image]) => image)
+
+const khammamImages = [
+  khammamGallery15,
+  khammamGallery17,
+  khammamGallery18,
+  khammamGallery19,
+  khammamGallery21,
+  khammamGallery22,
+  khammamGallery23,
+  khammamGallery24,
+  khammamGallery25,
+  khammamBlackGraniteDisplay,
+  khammamAboutSlabBanner,
+  khammamSlabsYard,
+  khammamCustomProcessing,
+  khammamFeature,
+]
+
+const mixedGalleryImages = Array.from({ length: Math.max(galleryImages.length, khammamImages.length) }, (_, index) => [
+  galleryImages[index],
+  khammamImages[index],
+]).flat().filter(Boolean)
 
 export const site = {
   name: 'Sri Adiseshu',
@@ -47,6 +84,7 @@ export const navItems = [
   { label: 'Services', path: '/services' },
   { label: 'Blogs', path: '/blogs' },
   { label: 'FAQ', path: '/faq' },
+  { label: 'Contact Us', path: '/contact' },
 ]
 
 export const images = {
@@ -62,6 +100,30 @@ export const images = {
   quarrySunset,
   quarryDetail,
   heroTexture,
+}
+
+export const quarryImages = {
+  chamarajanagar: [
+    quarrySunset,
+    serviceSlabs,
+    serviceBlocks,
+    heroQuarry,
+    quarryDetail,
+    blockClose,
+  ],
+  khammam: khammamImages,
+  thalavadi: [thalavadiStoneTexture],
+}
+
+export const quarryFeatureImages = {
+  chamarajanagar: quarrySunset,
+  khammam: khammamFeature,
+  thalavadi: thalavadiStoneTexture,
+}
+
+export const pageBanners = {
+  about: khammamAboutSlabBanner,
+  faq: khammamSlabsYard,
 }
 
 export const aboutPoints = [
@@ -89,7 +151,7 @@ export const services = [
     title: 'Custom Size Processing',
     description:
       'Tailor-made granite solutions cut to exact specifications to suit unique project requirements.',
-    image: serviceCustom,
+    image: khammamCustomProcessing,
   },
   {
     title: 'Bulk Order Fulfillment',
@@ -130,7 +192,7 @@ export const quarries = [
     material: 'Absolute Black Granite',
     application: 'Bulk Blocks & Processing',
     finish: 'Polished, Honed',
-    image: serviceSlabs,
+    image: khammamImages[0] || serviceSlabs,
     description:
       'Khammam operations support consistent block supply, processing coordination and dependable logistics for bulk domestic and export requirements.',
   },
@@ -144,7 +206,7 @@ export const quarries = [
     material: 'Absolute Black Granite',
     application: 'Custom Slabs',
     finish: 'Polished, Flamed',
-    image: heroQuarry,
+    image: thalavadiStoneTexture,
     description:
       'Thalavadi sourcing focuses on durable Absolute Black material for outdoor, interior and large-scale construction projects.',
   },
@@ -326,7 +388,7 @@ export const faqs = [
   },
 ]
 
-export const gallery = galleryImages
+export const gallery = mixedGalleryImages
 
 export const contactLocations = [
   {
@@ -337,11 +399,11 @@ export const contactLocations = [
   {
     name: 'Khammam - Ravigudem, Telangana',
     mapQuery: '92PP+M6M Ravigudem, Telangana',
-    image: quarryAerial,
+    image: khammamImages[1] || khammamImages[0] || quarryAerial,
   },
   {
     name: 'Thalavadi - Mallankuli, Tamil Nadu',
     mapQuery: 'QX6C+R8H Mallankuli, Tamil Nadu',
-    image: heroQuarry,
+    image: thalavadiStoneTexture,
   },
 ]
