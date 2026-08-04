@@ -1,5 +1,5 @@
 function PageHero({ title, image, tone = 'dark' }) {
-  const overlay = tone === 'warm' ? 'bg-[rgba(89,45,9,0.42)]' : 'bg-black/60'
+  const overlay = tone === 'warm' ? 'bg-black/40' : 'bg-black/60'
 
   return (
     <section

@@ -14,7 +14,7 @@ function ContactUs() {
         <div className="mx-auto grid w-full max-w-[1180px] gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-14">
           <img
             className="aspect-[0.86/1] w-full object-cover shadow-sm max-lg:max-h-[520px]"
-            src={images.quarryDetail}
+            src={images.khammamBlackGraniteDisplay}
             alt="ASM granite quarry blocks"
             decoding="async"
           />

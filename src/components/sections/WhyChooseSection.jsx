@@ -9,7 +9,7 @@ function WhyChooseSection() {
   return (
     <section className="relative min-h-[46rem] overflow-hidden text-white lg:min-h-[54rem]">
       <img className="absolute inset-0 size-full object-cover" src={images.quarryWide} alt="" decoding="async" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[#041432]/90" />
+      <div className="absolute inset-0 bg-black/90" />
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-20 pb-52 lg:grid-cols-[1.05fr_1fr] lg:gap-24 lg:py-28 lg:pb-56">
         <div>
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-white sm:text-sm">Why Choose Us</p>

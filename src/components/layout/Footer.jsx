@@ -30,13 +30,13 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer className="bg-[var(--color-deep)] text-white">
+    <footer className="bg-black text-white">
       <div className="mx-auto grid w-full max-w-[1320px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.1fr] lg:py-24">
         <div>
           <Link className="inline-block bg-white px-5 py-4" to="/" aria-label="Sri Adiseshu home">
             <img className="w-[220px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
           </Link>
-          <p className="mt-7 max-w-md text-[15px] leading-8 text-white/75">
+          <p className="mt-7 max-w-md text-[15px] leading-8 text-white">
             Premium Absolute Black granite sourced from trusted quarry operations, processed for consistent quality,
             reliable supply, and project-ready delivery.
           </p>
@@ -46,7 +46,7 @@ function Footer() {
 
               return (
                 <a
-                  className="grid size-11 place-items-center border border-white/15 text-white/80 transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                  className="grid size-11 place-items-center border border-white text-white transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
                   href={item.href}
                   aria-label={item.label}
                   key={item.label}
@@ -62,7 +62,7 @@ function Footer() {
           <h2 className="mb-7 text-lg font-extrabold uppercase tracking-wide">Pages</h2>
           <nav className="grid gap-4">
             {navItems.map((item) => (
-              <Link className="w-fit text-white/75 transition hover:text-[var(--color-accent)]" to={item.path} key={item.path}>
+              <Link className="w-fit text-white transition hover:text-[var(--color-accent)]" to={item.path} key={item.path}>
                 {item.label}
               </Link>
             ))}
@@ -74,7 +74,7 @@ function Footer() {
           <nav className="grid gap-4">
             {quarries.map((quarry) => (
               <Link
-                className="w-fit text-white/75 transition hover:text-[var(--color-accent)]"
+                className="w-fit text-white transition hover:text-[var(--color-accent)]"
                 to={`/quarries/${quarry.id}`}
                 key={quarry.id}
               >
@@ -86,7 +86,7 @@ function Footer() {
           <div className="grid gap-3">
             {services.slice(0, 4).map((service, index) => (
               <Link
-                className="w-fit text-sm text-white/70 transition hover:text-[var(--color-accent)]"
+                className="w-fit text-sm text-white transition hover:text-[var(--color-accent)]"
                 to="/services"
                 key={`${service.title}-${index}`}
               >
@@ -104,13 +104,13 @@ function Footer() {
 
               return (
                 <a
-                  className="grid grid-cols-[2.75rem_1fr] gap-4 text-white/75 transition hover:text-white"
+                  className="grid grid-cols-[2.75rem_1fr] gap-4 text-white transition hover:text-[var(--color-accent)]"
                   href={item.href}
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noreferrer' : undefined}
                   key={item.label}
                 >
-                  <span className="grid size-11 place-items-center border border-white/15 text-[var(--color-accent)]">
+                  <span className="grid size-11 place-items-center border border-[var(--color-accent)] bg-[var(--color-accent)] text-white">
                     <Icon size={18} />
                   </span>
                   <span className="pt-2 text-sm font-semibold leading-7">{item.label}</span>
@@ -126,8 +126,8 @@ function Footer() {
           </Link>
         </div>
       </div>
-      <div className="border-t border-white/10 px-6 py-6">
-        <div className="mx-auto w-full max-w-[1320px] text-sm font-semibold text-white/55">
+      <div className="border-t border-white px-6 py-6">
+        <div className="mx-auto w-full max-w-[1320px] text-sm font-semibold text-white">
           <p>&copy; 2026 Sri Adiseshu Minerals Pvt Ltd. All rights reserved.</p>
         </div>
       </div>

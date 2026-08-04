@@ -25,7 +25,7 @@ function Header() {
       <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-8 lg:justify-start lg:px-[42px]">
         <Logo />
         <button
-          className="inline-flex size-11 items-center justify-center border border-[var(--color-line)] bg-white text-[var(--color-ink)] lg:hidden"
+          className="inline-flex size-11 items-center justify-center border border-[#e7e9ee] bg-white text-[#061f33] lg:hidden"
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
@@ -46,7 +46,7 @@ function Header() {
                 scrollToPageTop()
               }}
               className={({ isActive }) =>
-                `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[#050711] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 ${
+                `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 ${
                   isActive ? 'text-[var(--color-accent)]' : ''
                 }`
               }
@@ -72,8 +72,8 @@ function Header() {
           </div>
         </nav>
         <div className="ml-auto hidden items-center gap-5 xl:flex">
-          <a className="inline-flex items-center gap-3 text-sm font-extrabold text-[var(--color-ink)] transition hover:text-[var(--color-accent)]" href={phoneHref}>
-            <span className="grid size-11 place-items-center border border-[var(--color-line)] text-[var(--color-accent)]">
+          <a className="inline-flex items-center gap-1 text-sm font-extrabold text-[var(--color-ink)] transition hover:text-[var(--color-accent)]" href={phoneHref}>
+            <span className="grid size-6 place-items-center text-[var(--color-accent)]">
               <Phone size={18} />
             </span>
             {site.phone}

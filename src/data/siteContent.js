@@ -100,6 +100,7 @@ export const images = {
   quarrySunset,
   quarryDetail,
   heroTexture,
+  khammamBlackGraniteDisplay,
 }
 
 export const quarryImages = {
@@ -122,7 +123,7 @@ export const quarryFeatureImages = {
 }
 
 export const pageBanners = {
-  about: khammamAboutSlabBanner,
+  about: khammamSlabsYard,
   faq: khammamSlabsYard,
 }
 

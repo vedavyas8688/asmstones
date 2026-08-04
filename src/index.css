@@ -1,19 +1,19 @@
 @import 'tailwindcss';
 
 :root {
-  --color-ink: #061f33;
-  --color-text: #48515f;
-  --color-muted: #777f8c;
+  --color-ink: #000000;
+  --color-text: #000000;
+  --color-muted: #000000;
   --color-accent: #d69a3d;
-  --color-accent-dark: #b77c25;
-  --color-accent-strong: #ff463b;
-  --color-deep: #0b1b24;
+  --color-accent-dark: #d69a3d;
+  --color-accent-strong: #d69a3d;
+  --color-deep: #000000;
   --color-paper: #ffffff;
-  --color-soft: #f6f8fb;
-  --color-line: #e7e9ee;
-  --color-tile: #dddddd;
-  --color-logo: #b89511;
-  --shadow-premium: 0 28px 70px rgba(8, 22, 33, 0.12);
+  --color-soft: #ffffff;
+  --color-line: #000000;
+  --color-tile: #ffffff;
+  --color-logo: #d69a3d;
+  --shadow-premium: 0 28px 70px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -80,7 +80,7 @@ main > section:not(:first-child) {
   inset: -78% -8% auto;
   height: 92%;
   z-index: -1;
-  background: #101417;
+  background: #000000;
   border-radius: 0 0 50% 50%;
   transform: translateY(-64%);
   transition: transform 360ms ease;
