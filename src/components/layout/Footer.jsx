@@ -23,9 +23,9 @@ const contactLinks = [
 ]
 
 const socialLinks = [
-  { label: 'Facebook', href: '#', icon: FaFacebookF },
-  { label: 'Instagram', href: '#', icon: FaInstagram },
-  { label: 'YouTube', href: '#', icon: FaYoutube },
+  { label: 'Facebook', icon: FaFacebookF },
+  { label: 'Instagram', icon: FaInstagram },
+  { label: 'YouTube', icon: FaYoutube },
 ]
 
 function Footer() {
@@ -45,14 +45,13 @@ function Footer() {
               const Icon = item.icon
 
               return (
-                <a
+                <span
                   className="grid size-11 place-items-center border border-white text-white transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
-                  href={item.href}
                   aria-label={item.label}
                   key={item.label}
                 >
                   <Icon size={18} />
-                </a>
+                </span>
               )
             })}
           </div>
