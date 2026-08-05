@@ -6,11 +6,11 @@ const SITE_URL = "https://asmstones.com";
 const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 const LOGO_IMAGE = `${SITE_URL}/asmstones-logo-1.webp`;
 
-const DEFAULT_TITLE =
-  "Absolute Black Granite Supplier | Sri Adiseshu Minerals Pvt Ltd";
+ export const DEFAULT_TITLE =
+  "Absolute Black Granite Manufacturer | Sri Adiseshu Minerals";
 
-const DEFAULT_DESCRIPTION =
-  "Sri Adiseshu Minerals Pvt Ltd supplies premium Absolute Black granite blocks, slabs, and custom sizes directly from our quarries for domestic and export projects.";
+export const DEFAULT_DESCRIPTION =
+  "Sri Adiseshu Minerals is a quarry owner and manufacturer of premium Absolute Black Granite, supplying high-quality blocks and slabs worldwide. Contact us today.";
 
 const DEFAULT_KEYWORDS =
   "Absolute Black granite, black granite supplier, granite quarry, granite blocks, granite slabs, Chamarajanagar granite, Khammam granite, Thalavadi granite";
@@ -24,43 +24,43 @@ const DEFAULT_KEYWORDS =
   "/about": {
     title: "Absolute Black Granite Quarry Owner | Sri Adiseshu Minerals",
     description:
-      "Learn about Sri Adiseshu Minerals, a quarry owner and manufacturer of premium Absolute Black Granite, delivering quality stone directly from our own quarries worldwide.",
+      "Learn about Sri Adiseshu Minerals, a quarry owner and manufacturer of premium Absolute Black Granite with reliable worldwide supply. Discover our story.",
   },
 
   "/quarries": {
     title: "Absolute Black Granite Quarries | Sri Adiseshu Minerals",
     description:
-      "Discover our own Absolute Black Granite quarries in Chamarajanagar, Khammam, and Thalavadi, supplying premium granite blocks and slabs directly from the source.",
+      "Explore our own Absolute Black Granite quarries in Chamarajanagar, Khammam, and Thalavadi. Discover premium granite directly from the source.",
   },
 
   "/gallery": {
     title: "Absolute Black Granite Gallery | Sri Adiseshu Minerals",
     description:
-      "Explore our gallery featuring our own Absolute Black Granite quarries, premium blocks, polished slabs, processing facilities, and completed stone products.",
+      "Browse our gallery of Absolute Black Granite blocks, slabs, quarry operations, and finished products. Explore our craftsmanship.",
   },
 
   "/services": {
     title: "Absolute Black Granite Manufacturer | Sri Adiseshu Minerals",
     description:
-      "We manufacture and supply Absolute Black Granite from our own quarries, offering blocks, slabs, custom cutting, polishing, and bulk supply worldwide.",
+      "We manufacture and supply Absolute Black Granite from our own quarries with custom cutting, polishing, and bulk supply. Contact us today.",
   },
 
   "/blogs": {
     title: "Absolute Black Granite Blog | Sri Adiseshu Minerals",
     description:
-      "Read expert insights on Absolute Black Granite, quarry operations, manufacturing, applications, maintenance, and industry knowledge from Sri Adiseshu Minerals.",
+      "Read expert insights on Absolute Black Granite, quarrying, applications, and maintenance. Explore our latest articles.",
   },
 
   "/faq": {
     title: "Absolute Black Granite FAQ | Sri Adiseshu Minerals",
     description:
-      "Find answers about our Absolute Black Granite, quarry ownership, manufacturing process, custom sizes, quality standards, and worldwide supply.",
+      "Find answers about Absolute Black Granite, quality, quarry sourcing, custom sizes, and bulk supply. Get the information you need.",
   },
 
   "/contact": {
     title: "Contact Absolute Black Granite Experts | Sri Adiseshu Minerals",
     description:
-      "Contact Sri Adiseshu Minerals for premium Absolute Black Granite from our own quarries. Request pricing, custom sizes, slabs, blocks, and bulk supply.",
+      "Contact Sri Adiseshu Minerals for premium Absolute Black Granite from our own quarries. Request a quote or get in touch today.",
   },
 };
 
