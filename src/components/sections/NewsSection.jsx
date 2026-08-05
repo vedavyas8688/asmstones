@@ -28,7 +28,7 @@ function NewsSection({ showAction = true }) {
         {news.map((item) => (
           <article className="relative bg-white shadow-[var(--shadow-premium)]" key={item.title}>
             <Link to={`/blogs/${item.id}`} aria-label={item.title}>
-              <img className="h-64 w-full object-cover transition duration-500 hover:scale-[1.02] lg:h-72" src={item.image} alt={item.title} decoding="async" />
+              <img className="h-64 w-full object-cover transition duration-500 hover:scale-[1.02] lg:h-72" src={item.image} alt={item.title} loading="lazy" decoding="async" />
             </Link>
             <span className="absolute right-0 top-56 inline-flex items-center gap-2 bg-[var(--color-accent)] px-5 py-4 text-xs font-extrabold uppercase tracking-wide text-white lg:top-64">
               <CalendarDays size={15} /> {item.date}

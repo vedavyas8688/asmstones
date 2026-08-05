@@ -10,24 +10,24 @@ import sunsetBlocks from '../assets/images/ChamarajanagarQuarry/sunset-blocks.we
 import quarrySunset from '../assets/images/ChamarajanagarQuarry/quarry-sunset.webp'
 import quarryDetail from '../assets/images/ChamarajanagarQuarry/quarry-detail.webp'
 import heroTexture from '../assets/images/ChamarajanagarQuarry/hero-texture.webp'
-import khammamGallery15 from '../assets/images/KhammamQuarry/quary2 (15).webp'
-import khammamGallery17 from '../assets/images/KhammamQuarry/quary2 (17).webp'
-import khammamGallery18 from '../assets/images/KhammamQuarry/quary2 (18).webp'
-import khammamGallery19 from '../assets/images/KhammamQuarry/quary2 (19).webp'
-import khammamGallery21 from '../assets/images/KhammamQuarry/quary2 (21).webp'
-import khammamGallery22 from '../assets/images/KhammamQuarry/quary2 (22).webp'
-import khammamGallery23 from '../assets/images/KhammamQuarry/quary2 (23).webp'
-import khammamGallery24 from '../assets/images/KhammamQuarry/quary2 (24).webp'
-import khammamGallery25 from '../assets/images/KhammamQuarry/quary2 (25).webp'
-import khammamBlackGraniteDisplay from '../assets/images/KhammamQuarry/contactbanner.webp'
+import khammamGallery15 from '../assets/images/KhammamQuarry/khammam-granite-quarry-block-yard.webp'
+import khammamGallery17 from '../assets/images/KhammamQuarry/khammam-black-granite-polished-slabs.webp'
+import khammamGallery18 from '../assets/images/KhammamQuarry/khammam-granite-slab-processing-unit.webp'
+import khammamGallery19 from '../assets/images/KhammamQuarry/khammam-granite-stacked-cut-slabs.webp'
+import khammamGallery21 from '../assets/images/KhammamQuarry/khammam-absolute-black-slab-stock.webp'
+import khammamGallery22 from '../assets/images/KhammamQuarry/khammam-granite-indoor-slab-storage.webp'
+import khammamGallery23 from '../assets/images/KhammamQuarry/khammam-black-granite-slab-stack.webp'
+import khammamGallery24 from '../assets/images/KhammamQuarry/khammam-granite-textured-slab-sample.webp'
+import khammamGallery25 from '../assets/images/KhammamQuarry/khammam-large-granite-yard-slabs.webp'
+import khammamBlackGraniteDisplay from '../assets/images/KhammamQuarry/khammam-black-granite-contact-banner.webp'
 import khammamAboutSlabBanner from '../assets/images/KhammamQuarry/khammam-about-slab-banner.webp'
 import khammamSlabsYard from '../assets/images/KhammamQuarry/khammam-slabs-yard.webp'
-import khammamCustomProcessing from '../assets/images/KhammamQuarry/quary2-16.webp'
-import khammamFeature from '../assets/images/KhammamQuarry/quary2-20.webp'
+import khammamCustomProcessing from '../assets/images/KhammamQuarry/khammam-custom-size-granite-processing.webp'
+import khammamFeature from '../assets/images/KhammamQuarry/khammam-polished-black-granite-feature.webp'
 import thalavadiStoneTexture from '../assets/images/ThalavadiQuarry/thalavadi-stone-texture.webp'
 
 const galleryImages = Object.entries(
-  import.meta.glob('../assets/images/ChamarajanagarQuarry/gallery-*.webp', { eager: true, import: 'default' }),
+  import.meta.glob('../assets/images/ChamarajanagarQuarry/chamarajanagar-*.webp', { eager: true, import: 'default' }),
 )
   .sort(([first], [second]) => first.localeCompare(second))
   .map(([, image]) => image)

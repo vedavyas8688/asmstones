@@ -1,4 +1,4 @@
-import quarryVideo from '../../assets/images/VID20260727131231.mp4'
+import quarryVideo from '../../assets/images/absolute-black-granite-quarry-video.mp4'
 
 function VideoSection() {
   return (

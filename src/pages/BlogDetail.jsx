@@ -88,7 +88,7 @@ function BlogDetail() {
                     key={item.id}
                     to={`/blogs/${item.id}`}
                   >
-                    <img className="aspect-square w-full object-cover" src={item.image} alt={item.title} decoding="async" />
+                    <img className="aspect-square w-full object-cover" src={item.image} alt={item.title} loading="lazy" decoding="async" />
                     <span>
                       <span className="text-xs font-extrabold uppercase tracking-wide text-[var(--color-accent)]">
                         {item.date}

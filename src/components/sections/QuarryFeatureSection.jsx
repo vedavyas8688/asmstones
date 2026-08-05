@@ -25,7 +25,8 @@ function QuarryFeatureSection() {
               <img
                 className="aspect-[1.35] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
                 src={quarryFeatureImages[quarry.id] || quarry.image}
-                alt={quarry.title}
+                alt={`${quarry.title} Absolute Black granite quarry`}
+                loading="lazy"
                 decoding="async"
               />
             </Link>

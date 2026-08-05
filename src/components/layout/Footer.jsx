@@ -34,7 +34,7 @@ function Footer() {
       <div className="mx-auto grid w-full max-w-[1320px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.1fr] lg:py-24">
         <div>
           <Link className="inline-block bg-white px-5 py-4" to="/" aria-label="Sri Adiseshu home">
-            <img className="w-[220px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
+            <img className="w-[220px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" loading="lazy" decoding="async" />
           </Link>
           <p className="mt-7 max-w-md text-[15px] leading-8 text-white">
             Premium Absolute Black granite sourced from trusted quarry operations, processed for consistent quality,

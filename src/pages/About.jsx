@@ -34,7 +34,7 @@ function About() {
       <PageHero title="About Us" image={pageBanners.about} />
       <section className="bg-white px-6 py-20 lg:py-32">
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
-          <img className="aspect-[1.42/1] w-full max-w-[620px] justify-self-end object-cover" src={images.serviceSlabs} alt="Premium granite block in warehouse" decoding="async" />
+          <img className="aspect-[1.42/1] w-full max-w-[620px] justify-self-end object-cover" src={images.serviceSlabs} alt="Premium Absolute Black granite slabs in warehouse" loading="lazy" decoding="async" />
           <div>
             <h2 className="max-w-xs text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:max-w-2xl sm:text-5xl">
               Providing Premium Granite Solutions
@@ -115,7 +115,7 @@ function About() {
               ))}
             </div>
           </div>
-          <img className="aspect-[1.25] w-full object-cover shadow-[var(--shadow-premium)]" src={images.blockClose} alt="Absolute Black granite block quality" decoding="async" />
+          <img className="aspect-[1.25] w-full object-cover shadow-[var(--shadow-premium)]" src={images.blockClose} alt="Close view of premium Absolute Black granite block quality" loading="lazy" decoding="async" />
         </div>
       </section>
     </main>

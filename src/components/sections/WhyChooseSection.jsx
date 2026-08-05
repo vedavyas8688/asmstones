@@ -1,6 +1,6 @@
 import { BadgeCheck, Play, X } from 'lucide-react'
 import { useState } from 'react'
-import quarryVideo from '../../assets/images/VID20260727131231.mp4'
+import quarryVideo from '../../assets/images/absolute-black-granite-quarry-video.mp4'
 import { images, qualityStats, reasons } from '../../data/siteContent'
 
 function WhyChooseSection() {
@@ -8,7 +8,7 @@ function WhyChooseSection() {
 
   return (
     <section className="relative min-h-[46rem] overflow-hidden text-white lg:min-h-[54rem]">
-      <img className="absolute inset-0 size-full object-cover" src={images.quarryWide} alt="" decoding="async" aria-hidden="true" />
+      <img className="absolute inset-0 size-full object-cover" src={images.quarryWide} alt="" loading="lazy" decoding="async" aria-hidden="true" />
       <div className="absolute inset-0 bg-black/90" />
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-20 pb-52 lg:grid-cols-[1.05fr_1fr] lg:gap-24 lg:py-28 lg:pb-56">
         <div>
@@ -43,7 +43,7 @@ function WhyChooseSection() {
         </div>
       </div>
       <div className="relative z-20 ml-auto mr-4 -mt-44 w-[min(calc(100%-2rem),860px)] lg:mr-[max(1rem,calc((100vw-1280px)/2))]">
-        <img className="h-64 w-full object-cover lg:h-88" src={images.sunsetBlocks} alt="Granite quarry at sunset" decoding="async" />
+        <img className="h-64 w-full object-cover lg:h-88" src={images.sunsetBlocks} alt="Absolute Black granite quarry blocks at sunset" loading="lazy" decoding="async" />
         <button
           className="absolute bottom-0 left-0 grid size-22 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-strong)]"
           type="button"

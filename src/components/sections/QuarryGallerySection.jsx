@@ -58,6 +58,7 @@ function QuarryGallerySection() {
                 className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.04]"
                 src={item.image}
                 alt={`${item.quarry.place} Absolute Black granite preview ${item.index + 1}`}
+                loading="lazy"
                 decoding="async"
               />
             </Link>

@@ -16,7 +16,7 @@ function Gallery() {
         <div className="mx-auto grid w-full max-w-[1080px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visibleGallery.map((image, index) => (
             <figure className="group relative overflow-hidden bg-[var(--color-line)]" key={`${image}-${index}`}>
-              <img className="aspect-[1.48/1] w-full object-cover transition group-hover:scale-105" src={image} alt={`ASM granite gallery ${index + 1}`} decoding="async" />
+              <img className="aspect-[1.48/1] w-full object-cover transition group-hover:scale-105" src={image} alt={`Absolute Black granite quarry and slab gallery image ${index + 1}`} loading="lazy" decoding="async" />
             </figure>
           ))}
         </div>

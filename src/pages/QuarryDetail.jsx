@@ -62,6 +62,7 @@ function QuarryDetail() {
                 key={image}
                 src={image}
                 alt={`${quarry.place} quarry view ${imageIndex + 1}`}
+                loading={imageIndex === activeImage ? 'eager' : 'lazy'}
                 decoding="async"
               />
             ))}
@@ -127,7 +128,7 @@ function QuarryDetail() {
                 className="group block overflow-hidden bg-white shadow-[var(--shadow-soft)] transition duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-premium)]"
               >
                 <div className="relative">
-                  <img className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105" src={item.image} alt={`${item.place} quarry`} decoding="async" />
+                  <img className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105" src={item.image} alt={`${item.place} Absolute Black granite quarry`} loading="lazy" decoding="async" />
                 </div>
                 <div className="p-7">
                   <h3 className="text-2xl font-extrabold text-[var(--color-ink)]">{item.title}</h3>
