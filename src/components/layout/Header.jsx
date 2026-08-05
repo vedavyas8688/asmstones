@@ -1,8 +1,8 @@
-import { Menu, Phone, X } from 'lucide-react'
+import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/logos/sri-adieseshu-minerals-logo.png'
-import { navItems, site } from '../../data/siteContent'
+import { navItems, quarries, site } from '../../data/siteContent'
 
 function scrollToPageTop() {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -18,7 +18,14 @@ function Logo() {
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const [quarryDropdownOpen, setQuarryDropdownOpen] = useState(false)
+  const location = useLocation()
   const phoneHref = `tel:${site.phone.replace(/\s/g, '')}`
+  const closeNavigation = () => {
+    setOpen(false)
+    setQuarryDropdownOpen(false)
+    scrollToPageTop()
+  }
 
   return (
     <header className="sticky top-0 z-50 h-[96px] bg-white lg:h-[120px]">
@@ -37,23 +44,73 @@ function Header() {
             open ? 'flex' : 'hidden'
           }`}
         >
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => {
-                setOpen(false)
-                scrollToPageTop()
-              }}
-              className={({ isActive }) =>
-                `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 ${
-                  isActive ? 'text-[var(--color-accent)]' : ''
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {navItems.map((item) => {
+            if (item.path === '/quarries') {
+              const isQuarryActive = location.pathname.startsWith('/quarries')
+
+              return (
+                <div
+                  className="relative border-b border-[var(--color-line)] lg:border-0"
+                  key={item.path}
+                  onMouseEnter={() => setQuarryDropdownOpen(true)}
+                  onMouseLeave={() => setQuarryDropdownOpen(false)}
+                >
+                  <div
+                    className={`flex items-center justify-between gap-2 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] ${
+                      isQuarryActive ? 'text-[var(--color-accent)]' : ''
+                    }`}
+                  >
+                    <NavLink className="px-5 py-4 lg:p-0" to={item.path} onClick={closeNavigation}>
+                      {item.label}
+                    </NavLink>
+                    <button
+                      className="grid size-11 place-items-center lg:size-6"
+                      type="button"
+                      onClick={() => setQuarryDropdownOpen((value) => !value)}
+                      aria-label="Toggle quarry links"
+                    >
+                      <ChevronDown className={`transition ${quarryDropdownOpen ? 'rotate-180' : ''}`} size={16} />
+                    </button>
+                  </div>
+                  <div
+                    className={`bg-white lg:absolute lg:left-0 lg:top-full lg:z-50 lg:min-w-[280px] lg:border lg:border-black lg:shadow-[var(--shadow-premium)] ${
+                      quarryDropdownOpen ? 'grid' : 'hidden'
+                    }`}
+                  >
+                    {quarries.map((quarry) => (
+                      <NavLink
+                        className={({ isActive }) =>
+                          `border-t border-[var(--color-line)] px-8 py-3 text-sm font-extrabold text-[var(--color-ink)] transition hover:bg-[var(--color-accent)] hover:text-white lg:border-t-0 lg:border-b lg:px-5 lg:py-4 lg:last:border-b-0 ${
+                            isActive ? 'bg-[var(--color-accent)] text-white' : ''
+                          }`
+                        }
+                        to={`/quarries/${quarry.id}`}
+                        onClick={closeNavigation}
+                        key={quarry.id}
+                      >
+                        {quarry.title}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={closeNavigation}
+                className={({ isActive }) =>
+                  `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 ${
+                    isActive ? 'text-[var(--color-accent)]' : ''
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            )
+          })}
           <div className="flex flex-col gap-4 border-b border-[var(--color-line)] px-5 py-5 lg:hidden">
             <a className="inline-flex items-center gap-3 text-base font-extrabold text-[var(--color-ink)]" href={phoneHref}>
               <Phone size={18} className="text-[var(--color-accent)]" />
@@ -62,10 +119,7 @@ function Header() {
             <NavLink
               className="premium-hover-button inline-flex min-h-12 items-center justify-center px-6 text-sm font-extrabold uppercase"
               to="/contact"
-              onClick={() => {
-                setOpen(false)
-                scrollToPageTop()
-              }}
+              onClick={closeNavigation}
             >
               Contact Us
             </NavLink>

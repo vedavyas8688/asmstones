@@ -10,6 +10,19 @@ function QuarryDetail() {
   const [sliderState, setSliderState] = useState({ quarryId: id, imageIndex: 0 })
   const sliderImages = quarry ? quarryImages[quarry.id] || [quarry.image] : []
   const activeImage = sliderState.quarryId === id ? sliderState.imageIndex : 0
+  const showPreviousImage = () => {
+    setSliderState((current) => ({
+      quarryId: id,
+      imageIndex:
+        current.quarryId === id ? (current.imageIndex - 1 + sliderImages.length) % sliderImages.length : 0,
+    }))
+  }
+  const showNextImage = () => {
+    setSliderState((current) => ({
+      quarryId: id,
+      imageIndex: current.quarryId === id ? (current.imageIndex + 1) % sliderImages.length : 0,
+    }))
+  }
 
   useEffect(() => {
     if (sliderImages.length <= 1) return undefined
@@ -19,7 +32,7 @@ function QuarryDetail() {
         quarryId: id,
         imageIndex: current.quarryId === id ? (current.imageIndex + 1) % sliderImages.length : 1 % sliderImages.length,
       }))
-    }, 4000)
+    }, 3000)
 
     return () => window.clearInterval(timer)
   }, [id, sliderImages.length])
@@ -28,9 +41,6 @@ function QuarryDetail() {
     return <Navigate to="/quarries" replace />
   }
 
-  const index = quarries.findIndex((item) => item.id === id)
-  const previous = quarries[(index - 1 + quarries.length) % quarries.length]
-  const next = quarries[(index + 1) % quarries.length]
   const otherQuarries = quarries.filter((item) => item.id !== quarry.id)
 
   return (
@@ -71,10 +81,12 @@ function QuarryDetail() {
               </div>
             ) : null}
           </div>
-          <div className="absolute bottom-3 left-3 flex gap-1">
-            <Link className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" to={`/quarries/${previous.id}`} aria-label="Previous quarry"><ArrowLeft size={20} /></Link>
-            <Link className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" to={`/quarries/${next.id}`} aria-label="Next quarry"><ArrowRight size={20} /></Link>
-          </div>
+          {sliderImages.length > 1 ? (
+            <div className="absolute bottom-3 left-3 flex gap-1">
+              <button className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" type="button" aria-label="Previous quarry image" onClick={showPreviousImage}><ArrowLeft size={20} /></button>
+              <button className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" type="button" aria-label="Next quarry image" onClick={showNextImage}><ArrowRight size={20} /></button>
+            </div>
+          ) : null}
           <aside className="mt-5 bg-white p-7 shadow-[var(--shadow-premium)] md:absolute md:-bottom-16 md:right-0 md:mt-0 md:w-[340px] lg:right-10">
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Location<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.place}</strong></p>
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Material Type<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.material}</strong></p>
