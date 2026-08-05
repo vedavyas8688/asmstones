@@ -3,6 +3,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import FloatingContact from './components/layout/FloatingContact'
 import ScrollToTop from './components/layout/ScrollToTop'
+import SeoManager from './components/seo/SeoManager'
 import About from './pages/About'
 import BlogDetail from './pages/BlogDetail'
 import Blogs from './pages/Blogs'
@@ -17,6 +18,7 @@ import Services from './pages/Services'
 function App() {
   return (
     <BrowserRouter>
+      <SeoManager />
       <ScrollToTop />
       <Header />
       <Routes>
