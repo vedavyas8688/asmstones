@@ -33,8 +33,6 @@ const galleryImages = Object.entries(
   .map(([, image]) => image)
 
 const khammamImages = [
-  khammamGallery15,
-  khammamGallery17,
   khammamGallery18,
   khammamGallery19,
   khammamGallery21,
@@ -44,7 +42,7 @@ const khammamImages = [
   khammamGallery25,
   khammamBlackGraniteDisplay,
   khammamAboutSlabBanner,
-  khammamSlabsYard,
+  khammamGallery17,
   khammamCustomProcessing,
   khammamFeature,
 ]
@@ -106,6 +104,8 @@ export const images = {
 export const quarryImages = {
   chamarajanagar: [
     ...galleryImages,
+    khammamGallery15,
+    khammamSlabsYard,
     quarrySunset,
     serviceSlabs,
     serviceBlocks,
