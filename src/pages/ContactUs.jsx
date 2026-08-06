@@ -1,13 +1,9 @@
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import ContactForm from '../components/forms/ContactForm'
 import FaqSection from '../components/sections/FaqSection'
-import { contactLocations, images, quarries, site } from '../data/siteContent'
+import { contactLocations, images, site } from '../data/siteContent'
 
 function ContactUs() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    event.currentTarget.reset()
-  }
-
   return (
     <main className="bg-white">
       <section className="px-6 py-12 lg:py-20">
@@ -25,40 +21,7 @@ function ContactUs() {
             </h1>
 
             <div className="mt-10 grid gap-10 border-2 border-black p-7 sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:p-12">
-              <form onSubmit={handleSubmit} className="grid gap-7">
-                <label className="grid gap-3 text-lg text-black">
-                  Full Name
-                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="name" required />
-                </label>
-                <label className="grid gap-3 text-lg text-black">
-                  E-mail
-                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="email" type="email" required />
-                </label>
-                <label className="grid gap-3 text-lg text-black">
-                  Phone Number
-                  <input className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="phone" type="tel" required />
-                </label>
-                <label className="grid gap-3 text-lg text-black">
-                  Quarry / Stone
-                  <select className="h-10 border-0 border-b-2 border-black bg-transparent outline-none" name="quarry" defaultValue="" required>
-                    <option value="" disabled>
-                      Select quarry
-                    </option>
-                    {quarries.map((quarry) => (
-                      <option value={quarry.title} key={quarry.id}>
-                        {quarry.title}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="grid gap-3 text-lg text-black">
-                  Message
-                  <textarea className="min-h-20 resize-y border-0 border-b-2 border-black bg-transparent outline-none" name="message" required />
-                </label>
-                <button className="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-8 text-lg font-semibold text-white transition hover:bg-[var(--color-accent)]" type="submit">
-                  Contact Us <ArrowUpRight size={18} />
-                </button>
-              </form>
+              <ContactForm />
 
               <aside className="grid content-start gap-8 text-black">
                 <div>

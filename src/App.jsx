@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import FloatingContact from './components/layout/FloatingContact'
+import ContactPopup from './components/layout/ContactPopup'
 import ScrollToTop from './components/layout/ScrollToTop'
 import SeoManager from './components/seo/SeoManager'
 import About from './pages/About'
@@ -33,6 +34,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>
+      <ContactPopup />
       <FloatingContact />
       <Footer />
     </BrowserRouter>

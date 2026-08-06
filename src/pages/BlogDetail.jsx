@@ -3,6 +3,14 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import FaqSection from '../components/sections/FaqSection'
 import { news } from '../data/siteContent'
 
+function slugifyHeading(text) {
+  return text
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
 function renderLinkedText(text, links = []) {
   if (!links.length) {
     return text
@@ -118,24 +126,24 @@ function BlogDetail() {
   return (
     <main className="bg-white">
       <section
-        className="relative min-h-[520px] overflow-hidden bg-cover bg-center px-6 py-24 text-white lg:min-h-[680px] lg:py-36"
+        className="relative h-[70svh] min-h-[420px] max-h-[680px] overflow-hidden bg-cover bg-center px-6 py-16 text-white lg:py-20"
         style={{ backgroundImage: `url(${blog.image})` }}
       >
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 mx-auto flex min-h-[360px] w-full max-w-[1180px] flex-col justify-end lg:min-h-[430px]">
-          <Link className="mb-10 inline-flex w-fit items-center gap-2 text-sm font-extrabold uppercase tracking-wide text-white" to="/blogs">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1180px] flex-col justify-end">
+          <Link className="mb-6 inline-flex w-fit items-center gap-2 text-sm font-extrabold uppercase tracking-wide text-white" to="/blogs">
             <ArrowLeft size={16} /> Blogs
           </Link>
           <span className="mb-5 inline-flex w-fit items-center gap-2 bg-[var(--color-accent)] px-5 py-3 text-xs font-extrabold uppercase tracking-wide">
             <CalendarDays size={15} /> {blog.date}
           </span>
-          <h1 className="max-w-[920px] text-[2.4rem] font-extrabold leading-tight sm:text-5xl lg:text-[4.5rem]">
+          <h1 className="max-w-[820px] text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[3.6rem]">
             {blog.title}
           </h1>
           {blog.subtitle ? (
-            <p className="mt-3 max-w-3xl text-xl font-extrabold leading-8 text-white">{blog.subtitle}</p>
+            <p className="mt-4 max-w-2xl text-base font-extrabold leading-7 text-white lg:text-lg">{blog.subtitle}</p>
           ) : null}
-          <p className="mt-7 max-w-3xl text-base font-semibold leading-8 text-white sm:text-lg">{blog.excerpt}</p>
+          <p className="mt-6 max-w-2xl text-sm font-semibold leading-7 text-white sm:text-base">{blog.excerpt}</p>
         </div>
       </section>
 
@@ -147,17 +155,18 @@ function BlogDetail() {
                 <h2 className="mb-5 text-2xl font-extrabold text-[var(--color-ink)]">Table of Contents</h2>
                 <ol className="grid gap-3 text-lg font-bold text-[var(--color-text)] sm:grid-cols-2">
                   {blog.tableOfContents.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <a className="underline-offset-4 transition hover:text-[var(--color-accent)] hover:underline" href={`#${slugifyHeading(item)}`}>
+                        {item}
+                      </a>
+                    </li>
                   ))}
                 </ol>
               </section>
             ) : null}
 
             {(blog.sections || []).map((section) => (
-              <section className="space-y-6 border-b border-[var(--color-line)] pb-14 last:border-0" key={section.heading}>
-                <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-[var(--color-accent)]">
-                  Sri Adiseshu Minerals
-                </p>
+              <section className="scroll-mt-28 space-y-6 pb-14" id={slugifyHeading(section.heading)} key={section.heading}>
                 <h2 className="text-3xl font-extrabold leading-tight text-[var(--color-ink)] lg:text-4xl">
                   {section.heading}
                 </h2>

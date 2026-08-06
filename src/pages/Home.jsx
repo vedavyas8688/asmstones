@@ -17,7 +17,6 @@ function Home() {
       <VideoSection />
       <WhyChooseSection />
       <NewsSection />
-
       <QuarryGallerySection />
       <FaqSection />
       <ContactSection />
