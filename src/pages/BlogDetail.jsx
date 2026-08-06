@@ -3,6 +3,108 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import FaqSection from '../components/sections/FaqSection'
 import { news } from '../data/siteContent'
 
+function renderLinkedText(text, links = []) {
+  if (!links.length) {
+    return text
+  }
+
+  const parts = []
+  let cursor = 0
+
+  links.forEach((link) => {
+    const index = text.indexOf(link.label, cursor)
+    if (index === -1) {
+      return
+    }
+
+    if (index > cursor) {
+      parts.push(text.slice(cursor, index))
+    }
+
+    parts.push(
+      <Link className="font-extrabold text-[var(--color-accent)] underline-offset-4 hover:underline" key={`${link.to}-${index}`} to={link.to}>
+        {link.label}
+      </Link>,
+    )
+    cursor = index + link.label.length
+  })
+
+  if (cursor < text.length) {
+    parts.push(text.slice(cursor))
+  }
+
+  return parts
+}
+
+function renderBlogBlock(block) {
+  if (block.type === 'paragraph') {
+    return <p className="text-lg leading-9 text-[var(--color-text)]">{renderLinkedText(block.text, block.links)}</p>
+  }
+
+  if (block.type === 'list') {
+    return (
+      <ul className="space-y-4 text-lg leading-9 text-[var(--color-text)]">
+        {block.items.map((item) => (
+          <li className="border-l-4 border-[var(--color-accent)] pl-5" key={item.title || item.label || item}>
+            {item.to ? (
+              <Link className="font-extrabold text-[var(--color-accent)] underline-offset-4 hover:underline" to={item.to}>
+                {item.title || item.label}
+              </Link>
+            ) : item.title ? (
+              <strong className="block text-[var(--color-ink)]">{item.title}</strong>
+            ) : null}
+            {item.description ? renderLinkedText(item.description, item.links) : item.to ? null : item}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  if (block.type === 'table') {
+    return (
+      <div className="overflow-x-auto border border-[var(--color-line)]">
+        <table className="w-full min-w-[720px] border-collapse text-left text-base">
+          <thead className="bg-black text-white">
+            <tr>
+              {block.headers.map((header) => (
+                <th className="border border-black px-5 py-4 font-extrabold" key={header}>
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row) => (
+              <tr className="border-t border-[var(--color-line)]" key={row.join('-')}>
+                {row.map((cell) => (
+                  <td className="border border-[var(--color-line)] px-5 py-4 leading-7" key={cell}>
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
+  if (block.type === 'faq') {
+    return (
+      <div className="grid gap-5">
+        {block.items.map((item) => (
+          <div className="border border-[var(--color-line)] p-6" key={item.question}>
+            <h3 className="text-xl font-extrabold text-[var(--color-ink)]">{item.question}</h3>
+            <p className="mt-3 leading-8 text-[var(--color-text)]">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  return null
+}
+
 function BlogDetail() {
   const { id } = useParams()
   const blog = news.find((item) => item.id === id)
@@ -30,6 +132,9 @@ function BlogDetail() {
           <h1 className="max-w-[920px] text-[2.4rem] font-extrabold leading-tight sm:text-5xl lg:text-[4.5rem]">
             {blog.title}
           </h1>
+          {blog.subtitle ? (
+            <p className="mt-3 max-w-3xl text-xl font-extrabold leading-8 text-white">{blog.subtitle}</p>
+          ) : null}
           <p className="mt-7 max-w-3xl text-base font-semibold leading-8 text-white sm:text-lg">{blog.excerpt}</p>
         </div>
       </section>
@@ -37,31 +142,54 @@ function BlogDetail() {
       <section className="min-h-[220svh] px-6 py-20 lg:py-28">
         <div className="mx-auto grid w-full max-w-[1180px] gap-12 lg:grid-cols-[1fr_340px]">
           <article className="space-y-14">
-            {blog.sections.map((section) => (
-              <section className="border-b border-[var(--color-line)] pb-14 last:border-0" key={section.heading}>
+            {blog.tableOfContents ? (
+              <section className="border border-[var(--color-line)] p-8">
+                <h2 className="mb-5 text-2xl font-extrabold text-[var(--color-ink)]">Table of Contents</h2>
+                <ol className="grid gap-3 text-lg font-bold text-[var(--color-text)] sm:grid-cols-2">
+                  {blog.tableOfContents.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </section>
+            ) : null}
+
+            {(blog.sections || []).map((section) => (
+              <section className="space-y-6 border-b border-[var(--color-line)] pb-14 last:border-0" key={section.heading}>
                 <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-[var(--color-accent)]">
                   Sri Adiseshu Minerals
                 </p>
-                <h2 className="mb-6 text-3xl font-extrabold leading-tight text-[var(--color-ink)] lg:text-4xl">
+                <h2 className="text-3xl font-extrabold leading-tight text-[var(--color-ink)] lg:text-4xl">
                   {section.heading}
                 </h2>
-                <p className="text-lg leading-9 text-[var(--color-text)]">{section.body}</p>
+                {section.body ? <p className="text-lg leading-9 text-[var(--color-text)]">{section.body}</p> : null}
+                {(section.blocks || []).map((block, index) => (
+                  <div key={`${section.heading}-${index}`}>{renderBlogBlock(block)}</div>
+                ))}
               </section>
             ))}
 
-            <section className="grid gap-6 bg-white p-8 sm:grid-cols-2 lg:p-10">
-              {[
-                'Direct quarry sourcing',
-                'Consistent block selection',
-                'Custom thickness support',
-                'Bulk and export-ready supply',
-              ].map((point) => (
-                <div className="flex items-center gap-3 font-extrabold text-[var(--color-ink)]" key={point}>
-                  <CheckCircle2 className="text-[var(--color-accent-strong)]" size={22} />
-                  {point}
-                </div>
-              ))}
-            </section>
+            {blog.author ? (
+              <section className="border border-[var(--color-line)] p-8">
+                <p className="font-extrabold text-[var(--color-ink)]">Author: {blog.author}</p>
+                {blog.publishNote ? <p className="mt-3 leading-8 text-[var(--color-text)]">{blog.publishNote}</p> : null}
+              </section>
+            ) : null}
+
+            {blog.hideDefaultChecklist ? null : (
+              <section className="grid gap-6 bg-white p-8 sm:grid-cols-2 lg:p-10">
+                {[
+                  'Direct quarry sourcing',
+                  'Consistent block selection',
+                  'Custom thickness support',
+                  'Bulk and export-ready supply',
+                ].map((point) => (
+                  <div className="flex items-center gap-3 font-extrabold text-[var(--color-ink)]" key={point}>
+                    <CheckCircle2 className="text-[var(--color-accent-strong)]" size={22} />
+                    {point}
+                  </div>
+                ))}
+              </section>
+            )}
           </article>
 
           <aside className="lg:sticky lg:top-36 lg:h-fit">
@@ -104,7 +232,7 @@ function BlogDetail() {
           </aside>
         </div>
       </section>
-      <FaqSection />
+      {blog.hideDefaultChecklist ? null : <FaqSection />}
     </main>
   )
 }

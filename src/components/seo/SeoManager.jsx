@@ -92,10 +92,12 @@ function getRouteMeta(pathname) {
     const blog = news.find((item) => item.id === blogMatch[1]);
     if (blog) {
       return {
- title: `${blog.title} | Absolute Black Granite Blog`,
-          description:
-  blog.excerpt ||
-  'Read expert insights on Absolute Black granite, quarrying, applications, and industry trends from Sri Adiseshu Minerals.'
+        title: blog.metaTitle || `${blog.title} | Absolute Black Granite Blog`,
+        description:
+          blog.metaDescription ||
+          blog.excerpt ||
+          'Read expert insights on Absolute Black granite, quarrying, applications, and industry trends from Sri Adiseshu Minerals.',
+        blog,
       };
     }
   }
@@ -120,7 +122,7 @@ function SeoManager() {
   setMetaContent('meta[property="og:title"]', meta.title);
   setMetaContent('meta[property="og:description"]', meta.description);
   setMetaContent('meta[property="og:url"]', canonicalUrl);
-  setMetaContent('meta[property="og:type"]', "website");
+  setMetaContent('meta[property="og:type"]', meta.blog ? "article" : "website");
   setMetaContent('meta[property="og:image"]', ogImage);
 
   // Twitter
@@ -139,7 +141,31 @@ function SeoManager() {
   setMetaAttribute("link[rel='canonical']", "href", canonicalUrl);
 
   // Structured Data
-  const structuredData = {
+  const structuredData = meta.blog
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: meta.blog.title,
+        description: meta.description,
+        image: ogImage,
+        author: {
+          "@type": "Organization",
+          name: meta.blog.author || `${site.name} ${site.suffix}`,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: `${site.name} ${site.suffix}`,
+          logo: {
+            "@type": "ImageObject",
+            url: LOGO_IMAGE,
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+        },
+      }
+    : {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: `${site.name} ${site.suffix}`,

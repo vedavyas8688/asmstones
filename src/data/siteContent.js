@@ -321,32 +321,338 @@ export const reasons = [
 
 export const news = [
   {
-    id: 'absolute-black-granite-modern-construction',
-    title: 'Absolute Black Granite for Modern Construction',
-    date: 'July 1, 2026',
+    id: 'absolute-black-granite-guide',
+    title: 'Absolute Black Granite: Uses, Finishes, Grades and Buying Guide',
+    subtitle: "A clear specification and sourcing guide for one of India's best-known dark natural stones",
+    date: 'August 6, 2026',
+    author: 'ASM Stones',
+    publishNote: 'Published date: August 1, 2026 | Last updated: August 1, 2026',
+    metaTitle: 'Absolute Black Granite: Uses & Buying Guide | ASM Stones',
+    metaDescription:
+      'Explore Absolute Black Granite uses, finishes, grades and quality checks. Learn how to choose slabs for kitchens, interiors, monuments and projects.',
     excerpt:
-      'Absolute Black granite has become one of the most preferred materials in modern architecture, known for its timeless elegance and strength.',
+      'Absolute Black Granite is selected when a project needs a deep, restrained and visually consistent dark surface.',
     image: serviceSlabs,
+    featuredImageFilename: 'absolute-black-granite-uses-buying-guide.webp',
+    featuredImageAlt: 'Premium Absolute Black Granite slabs prepared for architectural selection',
+    primaryKeyword: 'absolute black granite',
+    secondaryKeywords:
+      'absolute black granite price; absolute black granite slabs; absolute black granite India; black granite quarry; polished absolute black granite; honed black granite',
+    hideDefaultChecklist: true,
+    tableOfContents: [
+      'What Is Absolute Black Granite?',
+      'Why Is Absolute Black Granite Popular?',
+      'Appearance, Grades and Natural Variation',
+      'Absolute Black Granite Finishes',
+      'Best Applications',
+      'How to Check Quality',
+      'ASM Stones Locations',
+      'Buying Checklist',
+      'Care and Maintenance',
+      'Frequently Asked Questions',
+      'Conclusion',
+    ],
     sections: [
       {
-        heading: 'Why Absolute Black Works for Modern Projects',
+        heading: 'Introduction',
         body:
-          'Modern construction depends on materials that stay visually refined while handling daily use. Absolute Black granite gives architects and builders a dense, consistent stone surface that feels premium in commercial lobbies, luxury residences, exterior steps, wall cladding, counters, and monument work. Its deep tone brings contrast without adding visual noise, which makes it easy to pair with glass, metal, timber, concrete, and warm lighting.',
+          'Absolute Black Granite is selected when a project needs a deep, restrained and visually consistent dark surface. It is widely considered for kitchen worktops, vanity tops, wall panels, floors, steps, monuments, memorials and commercial interiors. Yet the name alone does not guarantee that every slab will look or perform the same. Colour depth, mineral visibility, finish quality, dimensions, batch consistency and fabrication all influence the final result. This guide explains what Absolute Black Granite is, how common finishes change its appearance, where it is used, how quality is evaluated and what buyers should specify before confirming an order.',
       },
       {
-        heading: 'Strength, Finish, and Long-Term Value',
-        body:
-          'The value of this granite is not only in its color. The stone is selected for structural soundness, processed for accurate sizing, and finished to match the use case. A polished surface creates a high-end interior look, while honed or flamed finishes can support practical movement areas. Good block selection also reduces wastage during cutting, which helps projects maintain better cost control from procurement to installation.',
+        heading: 'What Is Absolute Black Granite?',
+        blocks: [
+          {
+            type: 'paragraph',
+            text:
+              'Absolute Black Granite is a commercial dimension-stone name used for a dense, dark stone valued for its near-uniform appearance. In the stone trade, the term "granite" can cover a broader group of hard natural stones than the strict geological definition. Buyers should therefore judge the offered material by the approved sample, actual lot, finish, test information and project specification rather than relying only on the trade name.',
+          },
+          {
+            type: 'paragraph',
+            text:
+              'For company sourcing information, start with the ASM Stones quarry overview. The quarry pages should present current material photographs and clear location-specific details.',
+            links: [{ label: 'ASM Stones quarry overview', to: '/quarries' }],
+          },
+        ],
       },
       {
-        heading: 'Where Builders Use It Most',
-        body:
-          'Absolute Black granite is commonly used for kitchen counters, staircases, flooring borders, facade bands, reception desks, lift cladding, outdoor paving, memorials, and custom architectural pieces. The material suits both minimal modern design and traditional premium applications because it does not fight with the surrounding palette. It becomes the quiet anchor of the space.',
+        heading: 'Why Is Absolute Black Granite Popular?',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              {
+                title: 'Minimal appearance',
+                description:
+                  'Its dark, controlled visual character supports modern and classical design without competing with surrounding materials.',
+              },
+              {
+                title: 'Strong contrast',
+                description:
+                  'It pairs effectively with white surfaces, timber, brass, stainless steel, glass, concrete and coloured cabinetry.',
+              },
+              {
+                title: 'Finish flexibility',
+                description:
+                  'Polished, honed, leathered and textured finishes can produce very different design outcomes from the same stone.',
+              },
+              {
+                title: 'Multiple formats',
+                description:
+                  'It can be supplied as blocks, slabs, tiles and cut-to-size architectural components, subject to available dimensions and processing.',
+              },
+              {
+                title: 'Broad project use',
+                description:
+                  'It is considered for residential, hospitality, retail, institutional, landscape and memorial applications.',
+              },
+            ],
+          },
+        ],
       },
       {
-        heading: 'Buying Direct from Quarry-Linked Suppliers',
+        heading: 'Appearance, Grades and Natural Variation',
+        blocks: [
+          {
+            type: 'paragraph',
+            text:
+              'Buyers often describe Absolute Black Granite by colour depth and visual uniformity. However, grading names are not universally standardised. Terms such as premium, commercial, first choice or export quality can mean different things to different suppliers. A reliable purchase specification should replace vague grade labels with measurable and visual acceptance criteria.',
+          },
+          {
+            type: 'list',
+            items: [
+              {
+                title: 'Colour and Mineral Visibility',
+                description:
+                  'A high-uniformity selection normally shows a deep background with limited visible variation from a normal viewing distance. Other selections may show fine mineral specks, slight tone changes or features that become more visible under strong light. These are best evaluated on full slabs, not only on a small hand sample.',
+              },
+              {
+                title: 'Natural Features Versus Damage',
+                description:
+                  'Natural stone may contain mineral concentrations, small veins, healed fissures or textural changes. These should not automatically be treated as defects. At the same time, open cracks, weak repairs, edge damage or unacceptable surface issues should be identified before fabrication. The approved standard should clearly distinguish acceptable natural character from damage.',
+              },
+              {
+                title: 'Finish and Light Conditions',
+                description:
+                  'A dark polished slab can appear deeper and more reflective than the same material in a honed or flamed finish. Inspection should therefore happen in the specified finish and under realistic lighting. Strong directional light is useful for checking polish, flatness, resin marks, scratches and reflection consistency.',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Absolute Black Granite Finishes',
+        blocks: [
+          {
+            type: 'paragraph',
+            text:
+              'Finish affects colour, texture, slip behaviour, maintenance visibility and the way the stone interacts with light. Always approve a physical sample in the exact finish required.',
+          },
+          {
+            type: 'table',
+            headers: ['FINISH', 'VISUAL EFFECT', 'COMMON USE', 'BUYER CHECK'],
+            rows: [
+              [
+                'Polished',
+                'Deep black, glossy and reflective',
+                'Countertops, vanity tops, wall panels, monuments',
+                'Check reflection, polish consistency and surface marks under direct light',
+              ],
+              [
+                'Honed',
+                'Smooth matte or low sheen',
+                'Contemporary counters, floors and wall panels',
+                'Approve tone, handling-mark visibility and cleaning expectations',
+              ],
+              [
+                'Leathered',
+                'Textured surface with controlled sheen',
+                'Feature counters, bars and statement walls',
+                'Approve texture depth, edge finish and cleaning method',
+              ],
+              [
+                'Flamed / textured',
+                'Rougher, lighter-looking surface',
+                'Exterior paving, steps and selected landscape work',
+                'Confirm suitability, texture consistency and project performance requirements',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Best Applications for Absolute Black Granite',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              {
+                title: 'Kitchen and Vanity Surfaces',
+                description:
+                  'Absolute Black Granite can create a precise, architectural appearance in kitchens and bathrooms. It works particularly well with light cabinetry, natural wood, neutral walls and warm metal details. Before cutting, approve the actual slab layout, seam positions, cut-outs, edge profile, backsplash alignment and the location of any natural features.',
+              },
+              {
+                title: 'Flooring, Stairs and Wall Cladding',
+                description:
+                  'Dark stone can establish a formal, continuous visual language across lobby floors, staircases, skirting and wall panels. For larger areas, material should be planned by batch. The designer must also select a finish that suits traffic, cleaning routines and the required surface texture.',
+              },
+              {
+                title: 'Monuments, Memorials and Engraved Work',
+                description:
+                  'A dark polished background can provide strong contrast for lettering, symbols and decorative work. Buyers should provide the engraving method, letter depth, piece dimensions, face finish, edge finish and exposure conditions before production.',
+              },
+              {
+                title: 'Exterior and Landscape Applications',
+                description:
+                  'Absolute Black Granite may be considered for facades, steps, paving, kerbs and landscape details, but exterior suitability must be confirmed for the specific stone, finish, thickness, fixing system, climate and engineering specification. Appearance alone is not enough.',
+              },
+            ],
+          },
+          {
+            type: 'paragraph',
+            text:
+              'Use the ASM Stones gallery to show full slabs, finishes and completed applications, and link project enquiries to granite services.',
+            links: [
+              { label: 'ASM Stones gallery', to: '/gallery' },
+              { label: 'granite services', to: '/services' },
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'How to Check Absolute Black Granite Quality',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Approve a current physical sample and full-slab images from the actual lot.',
+              'State the acceptable colour range, mineral visibility and natural features in writing.',
+              'Confirm slab or piece dimensions, thickness and tolerances.',
+              'Inspect polish, flatness, texture consistency, edges and repairs under suitable light.',
+              'Review batch consistency for phased or high-volume projects.',
+              'Request relevant test information when the architect, engineer or destination market requires it.',
+              'Agree on piece identification, packing, container planning and inspection procedures before dispatch.',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'ASM Stones Locations',
+        blocks: [
+          {
+            type: 'paragraph',
+            text:
+              'ASM Stones has three location pages planned for quarry and sourcing information. Use these pages to show original photographs, available material, finish options, quality-control steps and enquiry details rather than repeating identical copy across all three pages.',
+          },
+          {
+            type: 'list',
+            items: [
+              { title: 'Chamarajanagar - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
+              { title: 'Khammam - Ravigudem, Telangana', to: '/quarries/khammam' },
+              { title: 'Thalavadi - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
+            ],
+          },
+          {
+            type: 'paragraph',
+            text:
+              'For an overview, visit the ASM Stones quarries page. Each location page should have unique text, images and project information to avoid duplicate content.',
+            links: [{ label: 'ASM Stones quarries page', to: '/quarries' }],
+          },
+        ],
+      },
+      {
+        heading: 'Absolute Black Granite Buying Checklist',
+        blocks: [
+          {
+            type: 'table',
+            headers: ['INFORMATION TO SHARE', 'WHY IT IS NEEDED'],
+            rows: [
+              ['Application and destination', 'The end use and exposure conditions affect finish, thickness, testing and packing decisions.'],
+              ['Required format', 'Blocks, random slabs, calibrated slabs, tiles and cut-to-size pieces require different planning.'],
+              ['Finish and edge details', 'Surface and edge processing influence appearance, production time and cost.'],
+              ['Dimensions, thickness and tolerances', 'Clear measurements reduce fabrication and installation disputes.'],
+              ['Quantity and delivery schedule', 'Volume and phasing influence lot selection, processing and logistics.'],
+              ['Inspection and documentation', 'State sample approval, photographs, testing, marking and paperwork expectations.'],
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Care and Maintenance',
         body:
-          'When granite is sourced through a quarry-linked supplier, buyers get better control over block quality, sizing expectations, finish planning, and bulk order timelines. This is especially important for large projects where color consistency and delivery reliability matter. Clear communication on dimensions, quantity, finish, edge treatment, and destination helps avoid delays once processing begins.',
+          'Routine care should be based on the actual stone, finish and installation. Use a soft cloth or mop and a pH-neutral product intended for natural stone. Wipe spills promptly, keep abrasive grit away from floors and avoid experimenting with strongly acidic or abrasive cleaners. Sealing should not follow an automatic calendar; test the surface and follow the guidance of the fabricator, installer and sealer manufacturer.',
+      },
+      {
+        heading: 'Frequently Asked Questions',
+        blocks: [
+          {
+            type: 'faq',
+            items: [
+              {
+                question: 'Is Absolute Black Granite completely plain black?',
+                answer:
+                  'It is valued for a deep and relatively consistent appearance, but natural stone can still show fine mineral character, subtle tonal changes or features that become visible under certain light. Approve the actual lot.',
+              },
+              {
+                question: 'Which finish makes Absolute Black Granite look darkest?',
+                answer:
+                  'A well-executed polished finish usually deepens the colour and increases reflection. Honed and textured finishes normally look softer or lighter.',
+              },
+              {
+                question: 'Is Absolute Black Granite suitable for kitchens?',
+                answer:
+                  "It is widely considered for kitchen worktops. The final result depends on slab quality, fabrication, installation, surface care and the project's practical requirements.",
+              },
+              {
+                question: 'Does Absolute Black Granite need sealing?',
+                answer:
+                  'Sealing requirements vary with the stone, finish, exposure and installation. Test and follow professional guidance rather than applying sealer automatically.',
+              },
+              {
+                question: 'Why do suppliers quote different grades?',
+                answer:
+                  'Grade names are not universal. Compare actual colour range, slab quality, dimensions, finish, repairs, tolerances and documentation instead of relying only on labels.',
+              },
+              {
+                question: 'Can it be used outdoors?',
+                answer:
+                  'Many dark stones are used outdoors, but the specific stone, finish, thickness, fixing method and technical requirements must be checked for the intended exposure.',
+              },
+              {
+                question: 'How should importers approve a lot?',
+                answer:
+                  'Use a current reference sample, full-slab photographs or video, written acceptance criteria, agreed inspection steps and clear packing documentation.',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Conclusion',
+        body:
+          'Absolute Black Granite can deliver a highly controlled, premium surface when the material, finish and quality expectations are specified clearly. Approve the actual lot, define dimensions and tolerances, inspect under realistic lighting and coordinate fabrication and logistics before production. Continue with the ASM Stones blog library for related granite selection and maintenance guides.',
+      },
+      {
+        heading: 'Get in Touch',
+        blocks: [
+          {
+            type: 'paragraph',
+            text:
+              'Planning a Absolute Black Granite requirement? Share the material, finish, dimensions, quantity, application and destination so the ASM Stones team can review the requirement clearly.',
+          },
+          {
+            type: 'list',
+            items: [
+              'ASMSTONES',
+              'LOCATIONS',
+              { title: 'Chamarajanagar - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
+              { title: 'Khammam - Ravigudem, Telangana', to: '/quarries/khammam' },
+              { title: 'Thalavadi - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
+              'Phone: 8549922444',
+              'Email: sales@asmstones.com',
+              { title: 'Send an enquiry through asmstones.com/contact', to: '/contact' },
+            ],
+          },
+        ],
       },
     ],
   },
