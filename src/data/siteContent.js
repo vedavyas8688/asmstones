@@ -105,6 +105,7 @@ export const images = {
 
 export const quarryImages = {
   chamarajanagar: [
+    ...galleryImages,
     quarrySunset,
     serviceSlabs,
     serviceBlocks,
@@ -172,21 +173,46 @@ export const quarries = [
   {
     id: 'chamarajanagar',
     index: '01',
-    title: 'Absolute Black - Chamarajanagar',
+    title: 'Chamarajanagar',
     name: 'Absolute Black',
     place: 'Chamarajanagar',
     state: 'Karnataka',
-    material: 'Premium Absolute Black Granite',
-    application: 'Blocks & Slabs Supply',
-    finish: 'Polished',
+    material: 'Absolute Black Granite / Nero Assoluto',
+    application: 'Rough Blocks, Granite Slabs & Cobble Stones',
+    finish: 'Polish, Leather, Flamed, Honed, Flamed & Brushed',
     image: quarrySunset,
     description:
-      'Our Chamarajanagar quarry is widely recognized for deep jet-black color and exceptional uniformity. The material is ideal for premium slabs, monuments, counters and architectural applications.',
+      'Our Chamarajanagar Black Granite offers a deep, consistent color that instantly elevates any space. Sourced directly from our quarry, it serves as the perfect foundation for luxury countertops, elegant monuments, and demanding architectural projects. Beyond its stunning aesthetics, it is independently tested to ensure it performs beautifully over time delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
+    detailIntro:
+      'Beyond its stunning aesthetics, Chamarajanagar Black Granite is independently tested to ensure it performs beautifully over time, delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
+    detailHeading: 'The Global Appeal of Chamarajanagar Black Granite',
+    detailPoints: [
+      {
+        title: 'Unparalleled Color Consistency',
+        description:
+          'Exhibits a uniform, pure jet-black hue with negligible graining or color variation. This absolute visual consistency is highly sought after for premium, contemporary architectural applications.',
+      },
+      {
+        title: 'Superior Finish Retention',
+        description:
+          'Characterized by exceptionally high structural density, this stone sustains a premium, mirror-like polish significantly longer than competing natural stone products, ensuring long-term aesthetic value and reduced maintenance.',
+      },
+      {
+        title: 'Architectural Versatility',
+        description:
+          'Highly adaptable to diverse design specifications. It maintains structural integrity and sophisticated appearance across honed, leathered, flamed, sandblasted, and other custom finish profiles.',
+      },
+      {
+        title: 'Exceptional Durability and Resilience',
+        description:
+          'Engineered by nature with remarkably low porosity and superior hardness. It delivers outstanding resistance to stains, moisture penetration, and abrasion for luxury applications, commercial facades, and premium countertops.',
+      },
+    ],
   },
   {
     id: 'khammam',
     index: '02',
-    title: 'Khammam Granite',
+    title: 'Khammam ',
     name: 'Absolute Black',
     place: 'Khammam',
     state: 'Telangana',
@@ -195,7 +221,32 @@ export const quarries = [
     finish: 'Polished, Honed',
     image: khammamImages[0] || serviceSlabs,
     description:
-      'Khammam operations support consistent block supply, processing coordination and dependable logistics for bulk domestic and export requirements.',
+      "Globally recognized as Absolute Black, Khammam Black Granite stands as one of the world’s most coveted natural stones. Sourced directly from our own prestigious quarry in Khammam, Telangana specifically the renowned Mannegudem region this stone offers unparalleled quality. Because we own and operate the source, we consistently produce the finest, most flawless blocks available, ensuring a pristine, uniform finish for your most demanding architectural and design projects.",
+    detailIntro:
+      'Because we own and operate the source, we consistently produce the finest, most flawless blocks available, ensuring a pristine, uniform finish for demanding architectural and design projects.',
+    detailHeading: 'The Signature Quality of Our Mannegudem Khammam Black',
+    detailPoints: [
+      {
+        title: 'The "Absolute Black" Standard',
+        description:
+          'Unlike lesser stones that suffer from heavy veining, grey speckling, or uneven tones, our granite is prized for its completely uniform, deep, velvety inky-black hue.',
+      },
+      {
+        title: 'A Flawless, Mirror-Like Finish',
+        description:
+          'Thanks to exceptional density and rich mineral composition, the stone achieves a stunning high-gloss polish that reflects light and gives architectural spaces a luxurious feel.',
+      },
+      {
+        title: 'Premium, Defect-Free Yield',
+        description:
+          "Because we own and operate our quarry, we have direct access to Mannegudem's unique geological formations. This allows us to extract massive, pristine raw blocks without natural cracks or color variations-a rare and highly coveted advantage in the global export market.",
+      },
+      {
+        title: 'Built for Global Architecture',
+        description:
+          'Engineered by nature to withstand extreme weather, this stark black granite is trusted worldwide for high-end kitchen countertops, luxury commercial flooring, and premium monuments.',
+      },
+    ],
   },
   {
     id: 'thalavadi',
@@ -209,7 +260,32 @@ export const quarries = [
     finish: 'Polished, Flamed',
     image: thalavadiStoneTexture,
     description:
-      'Thalavadi sourcing focuses on durable Absolute Black material for outdoor, interior and large-scale construction projects.',
+      'Soon to be sourced directly from our privately owned reserves in the Mallakuli / Mallankuzhi region of the Thalavadi belt, our upcoming Thalavadi Black Granite represents the pinnacle of dark natural stone. Currently in the final stages of regulatory approval, this exclusive quarry is poised to become the premier choice for international architects, wholesalers, and monumental masons. Because we own the source and will manage the extraction directly upon clearance, we are preparing to guarantee massive, flawless blocks with complete color consistency for your most expansive commercial and luxury residential projects.',
+    detailIntro:
+      'Currently in the final stages of regulatory approval, this exclusive quarry is poised to become a premier choice for international architects, wholesalers, and monumental masons seeking massive, flawless blocks with complete color consistency.',
+    detailHeading: 'Why Anticipate Our Thalavadi Black?',
+    detailPoints: [
+      {
+        title: 'Unwavering Visual Consistency',
+        description:
+          'Characterized by a pure, velvety black canvas with virtually zero veining or gray speckling, it provides the seamless, uniform aesthetic demanded by modern minimalist architecture.',
+      },
+      {
+        title: 'Engineered for Extreme Endurance',
+        description:
+          'Boasting remarkably high compressive strength, this future reserve features stone that can handle heavy structural loads and high-traffic wear without losing integrity.',
+      },
+      {
+        title: 'Ultra-Low Porosity',
+        description:
+          'With a near-zero water absorption rate, Thalavadi Black is virtually stain-proof and highly resistant to freeze-thaw cycles, making it suitable for hygienic kitchen surfaces and outdoor monuments.',
+      },
+      {
+        title: 'Versatile Premium Finishes',
+        description:
+          'Its dense crystalline structure is suited for mirror-polish, honed, leathered, and flamed finishes, allowing complete design flexibility for residential, commercial, and monumental work.',
+      },
+    ],
   },
 ]
 

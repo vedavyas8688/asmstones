@@ -6,7 +6,7 @@ import { images } from '../data/siteContent'
 function Quarries() {
   return (
     <main>
-      <PageHero title="Our Quarries" image={images.quarrySunset} tone="warm" />
+      <PageHero title="Our Quarries" image={images.quarrySunset} />
       <QuarryFeatureSection />
       <QuarryGallerySection />
     </main>

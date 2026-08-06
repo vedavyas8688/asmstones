@@ -96,18 +96,20 @@ function QuarryDetail() {
           </aside>
         </section>
         <section className="max-w-[80%] pt-8 md:pt-20 max-lg:max-w-full">
-          <h2 className="text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">Quarry Overview</h2>
+          <h2 className="text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">
+            {quarry.detailHeading || 'Quarry Overview'}
+          </h2>
           <p className="mt-5 text-lg leading-9 text-[var(--color-text)]">{quarry.description}</p>
-          <p className="mt-5 text-lg leading-9 text-[var(--color-text)]">
-            The quarry is supported by inspection-led extraction, careful sizing, and reliable dispatch planning. Our
-            process focuses on material consistency, finishing quality, and supply dependability for premium granite
-            requirements.
-          </p>
-          <ul className="mt-6 list-disc space-y-3 pl-6 text-lg leading-9 text-[var(--color-text)]">
-            <li><strong>Deep Jet-Black Color & Uniformity:</strong> Known for rich black tone and consistent appearance.</li>
-            <li><strong>High Strength & Durability:</strong> Suitable for demanding construction and architectural use.</li>
-            <li><strong>Minimal Variation & Fine Grain:</strong> Supports clean processing and refined finishes.</li>
-            <li><strong>Precision Processing & Quality Control:</strong> Every block and slab is inspected before dispatch.</li>
+          {quarry.detailIntro ? (
+            <p className="mt-5 text-lg leading-9 text-[var(--color-text)]">{quarry.detailIntro}</p>
+          ) : null}
+          <ul className="mt-6 space-y-4 text-lg leading-9 text-[var(--color-text)]">
+            {(quarry.detailPoints || []).map((point) => (
+              <li className="border-l-4 border-[var(--color-accent)] pl-5" key={point.title}>
+                <strong className="block text-[var(--color-ink)]">{point.title}</strong>
+                {point.description}
+              </li>
+            ))}
           </ul>
         </section>
         <section className="mt-12">
