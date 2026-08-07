@@ -10,11 +10,11 @@ const categoryFilters = [
 ]
 
 function QuarryGallerySection() {
-  const [activeQuarry, setActiveQuarry] = useState('all')
+  const [activeQuarry, setActiveQuarry] = useState('chamarajanagar')
   const [activeCategory, setActiveCategory] = useState('blocks')
   const [visibleCount, setVisibleCount] = useState(galleryBatchSize)
   const [lightboxIndex, setLightboxIndex] = useState(null)
-  const quarryFilters = [{ id: 'all', label: 'All' }, ...quarries.map((quarry) => ({ id: quarry.id, label: quarry.place }))]
+  const quarryFilters = [...quarries.map((quarry) => ({ id: quarry.id, label: quarry.place })), { id: 'all', label: 'All' }]
   const filteredQuarries = activeQuarry === 'all' ? quarries : quarries.filter((quarry) => quarry.id === activeQuarry)
   const previewItems = filteredQuarries.flatMap((quarry) =>
     (quarryGalleryItems[quarry.id]?.length ? quarryGalleryItems[quarry.id] : [{ image: quarry.image, category: 'quarry' }]).map((item, index) => ({
