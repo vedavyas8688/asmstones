@@ -94,7 +94,7 @@ function Gallery() {
                 onClick={() => setLightboxIndex(index)}
               >
                 <img className="aspect-[1.48/1] w-full object-cover transition group-hover:scale-105" src={item.image} alt={`${item.quarry.place} Absolute Black granite quarry and slab gallery image ${item.index + 1}`} loading="lazy" decoding="async" />
-                <span className="absolute bottom-4 right-4 grid size-11 place-items-center bg-[var(--color-accent)] text-white opacity-100 transition group-hover:bg-black md:opacity-0 md:group-hover:opacity-100">
+                <span className="absolute bottom-4 right-4 grid size-11 place-items-center bg-[var(--color-accent)] text-white opacity-100 transition md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn size={20} />
                 </span>
               </button>
