@@ -13,7 +13,7 @@ export const DEFAULT_DESCRIPTION =
   "Sri Adiseshu Minerals is a quarry owner and manufacturer of premium Absolute Black Granite, supplying high-quality blocks and slabs worldwide. Contact us today.";
 
 const DEFAULT_KEYWORDS =
-  "Absolute Black granite, black granite supplier, granite quarry, granite blocks, granite slabs, Chamarajanagar granite, Khammam granite, Thalavadi granite";
+  "Absolute Black granite, black granite supplier, granite quarry, granite blocks, granite slabs, Chamarajanagar Absolute Black granite, Khammam Absolute granite, Thalavadi Absolute Black granite";
 
  const staticMeta = {
   "/": {
@@ -30,7 +30,7 @@ const DEFAULT_KEYWORDS =
   "/quarries": {
     title: "Absolute Black Granite Quarries | Sri Adiseshu Minerals",
     description:
-      "Explore our own Absolute Black Granite quarries in Chamarajanagar, Khammam, and Thalavadi. Discover premium granite directly from the source.",
+      "Explore our own Absolute Black Granite quarries in Chamarajanagar - Absolute Black, Khammam - Absolute, and Thalavadi - Absolute Black. Discover premium granite directly from the source.",
   },
 
   "/gallery": {

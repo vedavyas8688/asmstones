@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logos/sri-adieseshu-minerals-logo.png'
 import { navItems, quarries, services, site } from '../../data/siteContent'
@@ -22,12 +21,6 @@ const contactLinks = [
   },
 ]
 
-const socialLinks = [
-  { label: 'Facebook', icon: FaFacebookF },
-  { label: 'Instagram', icon: FaInstagram },
-  { label: 'YouTube', icon: FaYoutube },
-]
-
 function Footer() {
   return (
     <footer className="bg-black text-white">
@@ -40,21 +33,6 @@ function Footer() {
             Premium Absolute Black granite sourced from trusted quarry operations, processed for consistent quality,
             reliable supply, and project-ready delivery.
           </p>
-          <div className="mt-7 flex gap-3" aria-label="Social links">
-            {socialLinks.map((item) => {
-              const Icon = item.icon
-
-              return (
-                <span
-                  className="grid size-11 place-items-center border border-white text-white transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
-                  aria-label={item.label}
-                  key={item.label}
-                >
-                  <Icon size={18} />
-                </span>
-              )
-            })}
-          </div>
         </div>
 
         <div>
@@ -126,8 +104,18 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-white px-6 py-6">
-        <div className="mx-auto w-full max-w-[1320px] text-sm font-semibold text-white">
-          <p>&copy; 2026 Sri Adiseshu Minerals Pvt Ltd. All rights reserved.</p>
+        <div className="mx-auto w-full max-w-[1320px] text-center text-sm font-semibold text-white">
+          <p>
+            Copyright &copy; 2026 Sri Adiseshu Minerals Pvt Ltd. All Rights Reserved. Designed by{' '}
+            <a
+              className="text-white underline underline-offset-4 transition hover:text-[var(--color-accent)]"
+              href="https://hirolainfotech.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Hirola InfoTech Solutions Pvt Ltd.
+            </a>
+          </p>
         </div>
       </div>
     </footer>

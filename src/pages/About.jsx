@@ -41,7 +41,7 @@ function About() {
             </h2>
             <p className="mt-7 max-w-xs text-base leading-8 text-[var(--color-text)] sm:max-w-3xl sm:text-lg">
               Our company specializes in sourcing and supplying high-quality Absolute Black granite from our own
-              quarries in Chamarajanagar, Khammam, and Thalavadi. With years of industry expertise, we deliver
+              quarries in Chamarajanagar - Absolute Black, Khammam - Absolute, and Thalavadi - Absolute Black. With years of industry expertise, we deliver
               consistent quality, precision processing, and reliable supply for projects of all scales.
             </p>
             <ul className="my-8 grid gap-4 text-sm">

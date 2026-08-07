@@ -33,6 +33,9 @@ import khammamExtraSlabs from '../assets/images/KhammamQuarry/khammam-black-gran
 import khammamBlockExtraYard from '../assets/images/KhammamQuarry/khammam-granite-block-extra-yard-32.webp'
 import khammamAbsoluteBlackExtraQuarry from '../assets/images/KhammamQuarry/khammam-absolute-black-extra-quarry-33.webp'
 import khammamStoneProcessingExtraView from '../assets/images/KhammamQuarry/khammam-stone-processing-extra-view-34.webp'
+import khammamQuarryExtraView from '../assets/images/KhammamQuarry/khammam-granite-quarry-extra-view-35.webp'
+import khammamYardExtraView from '../assets/images/KhammamQuarry/khammam-granite-yard-extra-view-36.webp'
+import khammamExtraMaterial from '../assets/images/KhammamQuarry/khammam-black-granite-extra-material-37.webp'
 import thalavadiStoneTexture from '../assets/images/ThalavadiQuarry/thalavadi-stone-texture.webp'
 
 const chamarajanagarFeaturedOrder = [
@@ -42,7 +45,29 @@ const chamarajanagarFeaturedOrder = [
   'chamarajanagar-granite-rough-blocks-25.webp',
 ]
 
-const galleryImages = Object.entries(
+const getImageCategory = (path) => {
+  const name = path.toLowerCase()
+
+  if (name.includes('processing') || name.includes('cutting') || name.includes('machinery') || name.includes('custom') || name.includes('shed') || name.includes('unit')) {
+    return 'processing'
+  }
+
+  if (name.includes('slab') || name.includes('slabs') || name.includes('polished') || name.includes('texture')) {
+    return 'slabs'
+  }
+
+  if (name.includes('block') || name.includes('blocks') || name.includes('rough') || name.includes('rock-face') || name.includes('material')) {
+    return 'blocks'
+  }
+
+  if (name.includes('yard') || name.includes('stock') || name.includes('storage') || name.includes('supply') || name.includes('dispatch') || name.includes('loading')) {
+    return 'yard'
+  }
+
+  return 'quarry'
+}
+
+const galleryImageItems = Object.entries(
   import.meta.glob('../assets/images/ChamarajanagarQuarry/chamarajanagar-*.webp', { eager: true, import: 'default' }),
 )
   .sort(([first], [second]) => {
@@ -57,51 +82,65 @@ const galleryImages = Object.entries(
 
     return first.localeCompare(second)
   })
-  .map(([, image]) => image)
+  .map(([path, image]) => ({
+    image,
+    category: getImageCategory(path),
+  }))
 
-const khammamImages = [
-  khammamGallery15,
-  khammamGallery18,
-  khammamGallery19,
-  khammamGallery21,
-  khammamGallery22,
-  khammamGallery23,
-  khammamGallery24,
-  khammamGallery25,
-  khammamBlackGraniteDisplay,
-  khammamAboutSlabBanner,
-  khammamSlabsYard,
-  khammamGallery17,
-  khammamCustomProcessing,
-  khammamFeature,
-  khammamExtraBlocks,
-  khammamExtraStock,
-  khammamExtraCutting,
-  khammamExtraRoad,
-  khammamSupplyYard,
-  khammamExtraSlabs,
-  khammamBlockExtraYard,
-  khammamAbsoluteBlackExtraQuarry,
-  khammamStoneProcessingExtraView,
+const galleryImages = galleryImageItems.map((item) => item.image)
+
+const createKhammamImage = (image, filename) => ({
+  image,
+  category: getImageCategory(filename),
+})
+
+const khammamImageItems = [
+  createKhammamImage(khammamGallery15, 'khammam-granite-quarry-block-yard.webp'),
+  createKhammamImage(khammamGallery18, 'khammam-granite-slab-processing-unit.webp'),
+  createKhammamImage(khammamGallery19, 'khammam-granite-stacked-cut-slabs.webp'),
+  createKhammamImage(khammamGallery21, 'khammam-absolute-black-slab-stock.webp'),
+  createKhammamImage(khammamGallery22, 'khammam-granite-indoor-slab-storage.webp'),
+  createKhammamImage(khammamGallery23, 'khammam-black-granite-slab-stack.webp'),
+  createKhammamImage(khammamGallery24, 'khammam-granite-textured-slab-sample.webp'),
+  createKhammamImage(khammamGallery25, 'khammam-large-granite-yard-slabs.webp'),
+  createKhammamImage(khammamBlackGraniteDisplay, 'khammam-black-granite-contact-banner.webp'),
+  createKhammamImage(khammamAboutSlabBanner, 'khammam-about-slab-banner.webp'),
+  createKhammamImage(khammamSlabsYard, 'khammam-slabs-yard.webp'),
+  createKhammamImage(khammamGallery17, 'khammam-black-granite-polished-slabs.webp'),
+  createKhammamImage(khammamCustomProcessing, 'khammam-custom-size-granite-processing.webp'),
+  createKhammamImage(khammamFeature, 'khammam-polished-black-granite-feature.webp'),
+  createKhammamImage(khammamExtraBlocks, 'khammam-granite-yard-extra-blocks-26.webp'),
+  createKhammamImage(khammamExtraStock, 'khammam-black-granite-extra-stock-27.webp'),
+  createKhammamImage(khammamExtraCutting, 'khammam-granite-extra-cutting-area-28.webp'),
+  createKhammamImage(khammamExtraRoad, 'khammam-granite-quarry-extra-road-29.webp'),
+  createKhammamImage(khammamSupplyYard, 'khammam-granite-supply-yard-30.webp'),
+  createKhammamImage(khammamExtraSlabs, 'khammam-black-granite-extra-slabs-31.webp'),
+  createKhammamImage(khammamBlockExtraYard, 'khammam-granite-block-extra-yard-32.webp'),
+  createKhammamImage(khammamAbsoluteBlackExtraQuarry, 'khammam-absolute-black-extra-quarry-33.webp'),
+  createKhammamImage(khammamStoneProcessingExtraView, 'khammam-stone-processing-extra-view-34.webp'),
+  createKhammamImage(khammamQuarryExtraView, 'khammam-granite-quarry-extra-view-35.webp'),
+  createKhammamImage(khammamYardExtraView, 'khammam-granite-yard-extra-view-36.webp'),
+  createKhammamImage(khammamExtraMaterial, 'khammam-black-granite-extra-material-37.webp'),
 ]
 
+const khammamImages = khammamImageItems.map((item) => item.image)
 export const site = {
   name: 'Sri Adiseshu',
   suffix: 'Minerals Pvt Ltd',
   email: 'sales@asmstones.com',
-  phone: '8549922444',
-  address: 'Chamarajanagar, Khammam and Thalavadi quarry operations',
+  phone: '+91 8549922444',
+  address: 'Chamarajanagar - Absolute Black, Khammam - Absolute and Thalavadi - Absolute Black quarry operations',
   locations: [
     {
-      label: 'Chamarajanagar - Veeranapura, Karnataka',
+      label: 'Chamarajanagar - Absolute Black - Veeranapura, Karnataka',
       href: 'https://www.google.com/maps/search/?api=1&query=WV26%2BQ44%2C%20Veeranapura%2C%20Karnataka%2C%20India',
     },
     {
-      label: 'Khammam - Ravigudem, Telangana',
+      label: 'Khammam - Absolute - Ravigudem, Telangana',
       href: 'https://www.google.com/maps/search/?api=1&query=92PP%2BM6M%20Ravigudem%2C%20Telangana',
     },
     {
-      label: 'Thalavadi - Mallankuli, Tamil Nadu',
+      label: 'Thalavadi - Absolute Black - Mallankuli, Tamil Nadu',
       href: 'https://www.google.com/maps/search/?api=1&query=QX6C%2BR8H%20Mallankuli%2C%20Tamil%20Nadu',
     },
   ],
@@ -146,6 +185,20 @@ export const quarryImages = {
   ],
   khammam: khammamImages,
   thalavadi: [thalavadiStoneTexture],
+}
+
+export const quarryGalleryItems = {
+  chamarajanagar: [
+    ...galleryImageItems,
+    { image: quarrySunset, category: 'quarry' },
+    { image: serviceSlabs, category: 'slabs' },
+    { image: serviceBlocks, category: 'blocks' },
+    { image: heroQuarry, category: 'quarry' },
+    { image: quarryDetail, category: 'quarry' },
+    { image: blockClose, category: 'blocks' },
+  ],
+  khammam: khammamImageItems,
+  thalavadi: [{ image: thalavadiStoneTexture, category: 'quarry' }],
 }
 
 export const quarryFeatureImages = {
@@ -204,19 +257,19 @@ export const quarries = [
   {
     id: 'chamarajanagar',
     index: '01',
-    title: 'Chamarajanagar',
+    title: 'Chamarajanagar - Absolute Black',
     name: 'Absolute Black',
-    place: 'Chamarajanagar',
-    state: 'Karnataka',
+    place: 'Chamarajanagar - Absolute Black',
+    state: 'Karnataka, India',
     material: 'Absolute Black Granite / Nero Assoluto',
     application: 'Rough Blocks, Granite Slabs & Cobble Stones',
     finish: 'Polish, Leather, Flamed, Honed, Flamed & Brushed',
     image: quarrySunset,
     description:
-      'Our Chamarajanagar Black Granite offers a deep, consistent color that instantly elevates any space. Sourced directly from our quarry, it serves as the perfect foundation for luxury countertops, elegant monuments, and demanding architectural projects. Beyond its stunning aesthetics, it is independently tested to ensure it performs beautifully over time delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
+      'Our Chamarajanagar - Absolute Black Granite offers a deep, consistent color that instantly elevates any space. Sourced directly from our quarry, it serves as the perfect foundation for luxury countertops, elegant monuments, and demanding architectural projects. Beyond its stunning aesthetics, it is independently tested to ensure it performs beautifully over time delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
     detailIntro:
-      'Beyond its stunning aesthetics, Chamarajanagar Black Granite is independently tested to ensure it performs beautifully over time, delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
-    detailHeading: 'The Global Appeal of Chamarajanagar Black Granite',
+      'Beyond its stunning aesthetics, Chamarajanagar - Absolute Black Granite is independently tested to ensure it performs beautifully over time, delivering incredible strength, ultra-low water absorption, high density, and superior wear resistance.',
+    detailHeading: 'The Global Appeal of Chamarajanagar - Absolute Black Granite',
     detailPoints: [
       {
         title: 'Unparalleled Color Consistency',
@@ -243,19 +296,19 @@ export const quarries = [
   {
     id: 'khammam',
     index: '02',
-    title: 'Khammam ',
+    title: 'Khammam - Absolute',
     name: 'Absolute Black',
-    place: 'Khammam',
-    state: 'Telangana',
+    place: 'Khammam - Absolute',
+    state: 'Telangana, India',
     material: 'Absolute Black Granite',
     application: 'Bulk Blocks & Processing',
     finish: 'Polished, Honed',
     image: khammamImages[0] || serviceSlabs,
     description:
-      "Globally recognized as Absolute Black, Khammam Black Granite stands as one of the world’s most coveted natural stones. Sourced directly from our own prestigious quarry in Khammam, Telangana specifically the renowned Mannegudem region this stone offers unparalleled quality. Because we own and operate the source, we consistently produce the finest, most flawless blocks available, ensuring a pristine, uniform finish for your most demanding architectural and design projects.",
+      "Globally recognized as Absolute Black, Khammam - Absolute Black Granite stands as one of the world's most coveted natural stones. Sourced directly from our own prestigious quarry in Khammam - Absolute, Telangana specifically the renowned Mannegudem region this stone offers unparalleled quality. Because we own and operate the source, we consistently produce the finest, most flawless blocks available, ensuring a pristine, uniform finish for your most demanding architectural and design projects.",
     detailIntro:
       'Because we own and operate the source, we consistently produce the finest, most flawless blocks available, ensuring a pristine, uniform finish for demanding architectural and design projects.',
-    detailHeading: 'The Signature Quality of Our Mannegudem Khammam Black',
+    detailHeading: 'The Signature Quality of Our Mannegudem Khammam - Absolute Black',
     detailPoints: [
       {
         title: 'The "Absolute Black" Standard',
@@ -282,10 +335,10 @@ export const quarries = [
   {
     id: 'thalavadi',
     index: '03',
-    title: 'Absolute Black - Thalavadi',
+    title: 'Thalavadi - Absolute Black',
     name: 'Absolute Black',
-    place: 'Thalavadi',
-    state: 'Tamil Nadu',
+    place: 'Thalavadi - Absolute Black',
+    state: 'Tamil Nadu, India',
     material: 'Absolute Black Granite',
     application: 'Custom Slabs',
     finish: 'Polished, Flamed',
@@ -336,7 +389,7 @@ export const reasons = [
   {
     title: 'Direct Quarry Sourcing',
     description:
-      'With our own quarries in Chamarajanagar, Khammam, and Thalavadi, we guarantee authenticity and consistency.',
+      'With our own quarries in Chamarajanagar - Absolute Black, Khammam - Absolute, and Thalavadi - Absolute Black, we guarantee authenticity and consistency.',
   },
   {
     title: 'Reliable Supply',
@@ -577,9 +630,9 @@ export const news = [
           {
             type: 'list',
             items: [
-              { title: 'Chamarajanagar - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
-              { title: 'Khammam - Ravigudem, Telangana', to: '/quarries/khammam' },
-              { title: 'Thalavadi - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
+              { title: 'Chamarajanagar - Absolute Black - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
+              { title: 'Khammam - Absolute - Ravigudem, Telangana', to: '/quarries/khammam' },
+              { title: 'Thalavadi - Absolute Black - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
             ],
           },
           {
@@ -675,10 +728,10 @@ export const news = [
             items: [
               'ASMSTONES',
               'LOCATIONS',
-              { title: 'Chamarajanagar - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
-              { title: 'Khammam - Ravigudem, Telangana', to: '/quarries/khammam' },
-              { title: 'Thalavadi - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
-              'Phone: 8549922444',
+              { title: 'Chamarajanagar - Absolute Black - Veerenapura, Karnataka', to: '/quarries/chamarajanagar' },
+              { title: 'Khammam - Absolute - Ravigudem, Telangana', to: '/quarries/khammam' },
+              { title: 'Thalavadi - Absolute Black - Mallankuli, Tamil Nadu', to: '/quarries/thalavadi' },
+              'Phone: +91 8549922444',
               'Email: sales@asmstones.com',
               { title: 'Send an enquiry through asmstones.com/contact', to: '/contact' },
             ],
@@ -758,7 +811,7 @@ export const faqs = [
   {
     question: 'Where do you source your granite from?',
     answer:
-      'We source from our quarry network in Chamarajanagar, Khammam in Telangana, and Thalavadi.',
+      'We source from our quarry network in Chamarajanagar - Absolute Black, Khammam - Absolute in Telangana, and Thalavadi - Absolute Black.',
   },
   {
     question: 'What products do you offer?',
@@ -806,17 +859,17 @@ export const gallery = galleryImages
 
 export const contactLocations = [
   {
-    name: 'Chamarajanagar - Veeranapura, Karnataka',
+    name: 'Chamarajanagar - Absolute Black - Veeranapura, Karnataka',
     mapQuery: 'WV26+Q44, Veeranapura, Karnataka, India',
     image: quarryDetail,
   },
   {
-    name: 'Khammam - Ravigudem, Telangana',
+    name: 'Khammam - Absolute - Ravigudem, Telangana',
     mapQuery: '92PP+M6M Ravigudem, Telangana',
     image: khammamImages[1] || khammamImages[0] || quarryAerial,
   },
   {
-    name: 'Thalavadi - Mallankuli, Tamil Nadu',
+    name: 'Thalavadi - Absolute Black - Mallankuli, Tamil Nadu',
     mapQuery: 'QX6C+R8H Mallankuli, Tamil Nadu',
     image: thalavadiStoneTexture,
   },

@@ -1,14 +1,39 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ZoomIn } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import FaqSection from '../components/sections/FaqSection'
-import { quarries, quarryImages } from '../data/siteContent'
+import GalleryLightbox from '../components/sections/GalleryLightbox'
+import { quarries, quarryGalleryItems, quarryImages } from '../data/siteContent'
+
+const galleryBatchSize = 9
+const categoryFilters = [
+  { id: 'blocks', label: 'Block Photos' },
+  { id: 'quarry', label: 'Quarry Photos' },
+]
+
+function filterLabel(category) {
+  return categoryFilters.find((filter) => filter.id === category)?.label || 'Gallery Photos'
+}
 
 function QuarryDetail() {
   const { id } = useParams()
   const quarry = quarries.find((item) => item.id === id)
   const [sliderState, setSliderState] = useState({ quarryId: id, imageIndex: 0 })
+  const [galleryState, setGalleryState] = useState({ quarryId: id, category: 'blocks', visibleCount: galleryBatchSize })
+  const [lightboxState, setLightboxState] = useState({ quarryId: id, imageIndex: null })
   const sliderImages = quarry ? quarryImages[quarry.id] || [quarry.image] : []
+  const activeCategory = galleryState.quarryId === id ? galleryState.category : 'blocks'
+  const visibleCount = galleryState.quarryId === id ? galleryState.visibleCount : galleryBatchSize
+  const galleryItems = quarry
+    ? (quarryGalleryItems[quarry.id] || [{ image: quarry.image, category: 'quarry' }]).filter((item) => item.category === activeCategory)
+    : []
+  const visibleGalleryItems = galleryItems.slice(0, visibleCount)
+  const lightboxItems = galleryItems.map((item, index) => ({
+    image: item.image,
+    alt: `${quarry?.place || 'Quarry'} ${filterLabel(activeCategory)} ${index + 1}`,
+  }))
+  const lightboxIndex = lightboxState.quarryId === id ? lightboxState.imageIndex : null
+  const hasMoreGalleryImages = visibleCount < galleryItems.length
   const activeImage = sliderState.quarryId === id ? sliderState.imageIndex : 0
   const showPreviousImage = () => {
     setSliderState((current) => ({
@@ -112,6 +137,88 @@ function QuarryDetail() {
             ))}
           </ul>
         </section>
+        <section className="mt-16">
+          <div className="mb-8 flex items-end justify-between gap-5 max-sm:flex-col max-sm:items-start">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Gallery</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">
+                {quarry.title} Gallery
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {categoryFilters.map((filter) => {
+                const isActive = activeCategory === filter.id
+
+                return (
+                  <button
+                    className={`min-h-10 px-5 text-xs font-extrabold uppercase tracking-wide transition ${
+                      isActive
+                        ? 'bg-[var(--color-accent)] text-white'
+                        : 'border border-black text-black hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
+                    }`}
+                    type="button"
+                    key={filter.id}
+                    onClick={() => {
+                      setGalleryState({ quarryId: id, category: filter.id, visibleCount: galleryBatchSize })
+                      setLightboxState({ quarryId: id, imageIndex: null })
+                    }}
+                  >
+                    {filter.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
+          {visibleGalleryItems.length ? (
+            <>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {visibleGalleryItems.map((item, index) => (
+                  <figure className="group relative overflow-hidden bg-[var(--color-line)]" key={`${quarry.id}-${activeCategory}-${index}`}>
+                    <button
+                      className="block w-full cursor-pointer text-left"
+                      type="button"
+                      aria-label="Open gallery image"
+                      onClick={() => setLightboxState({ quarryId: id, imageIndex: index })}
+                    >
+                      <img
+                        className="aspect-[1.48/1] w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                        src={item.image}
+                        alt={`${quarry.place} ${filterLabel(activeCategory)} ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span className="absolute bottom-4 right-4 grid size-11 place-items-center bg-[var(--color-accent)] text-white opacity-100 transition group-hover:bg-black md:opacity-0 md:group-hover:opacity-100">
+                        <ZoomIn size={20} />
+                      </span>
+                    </button>
+                  </figure>
+                ))}
+              </div>
+              {hasMoreGalleryImages ? (
+                <div className="mt-10 flex justify-center">
+                  <button
+                    className="premium-hover-button inline-flex min-h-14 cursor-pointer items-center justify-center px-8 text-sm font-extrabold uppercase"
+                    type="button"
+                    onClick={() =>
+                      setGalleryState((current) => ({
+                        quarryId: id,
+                        category: current.quarryId === id ? current.category : activeCategory,
+                        visibleCount: (current.quarryId === id ? current.visibleCount : visibleCount) + galleryBatchSize,
+                      }))
+                    }
+                  >
+                    Load More
+                  </button>
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <p className="border border-[var(--color-line)] p-8 text-lg font-bold text-[var(--color-text)]">
+              No {filterLabel(activeCategory).toLowerCase()} available for this quarry yet.
+            </p>
+          )}
+        </section>
         <section className="mt-12">
           <div className="mb-7 flex items-end justify-between gap-5 max-sm:flex-col max-sm:items-start">
             <div>
@@ -145,6 +252,14 @@ function QuarryDetail() {
         </section>
       </div>
       <FaqSection />
+      {lightboxIndex !== null ? (
+        <GalleryLightbox
+          items={lightboxItems}
+          activeIndex={lightboxIndex}
+          onClose={() => setLightboxState({ quarryId: id, imageIndex: null })}
+          onMove={(imageIndex) => setLightboxState({ quarryId: id, imageIndex })}
+        />
+      ) : null}
     </main>
   )
 }

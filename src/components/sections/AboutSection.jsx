@@ -21,7 +21,7 @@ function AboutSection({ compact = false }) {
           </h2>
           <p className="mt-7 max-w-xs text-base leading-8 text-[var(--color-text)] sm:max-w-3xl sm:text-lg">
             We specialize in sourcing and supplying premium Absolute Black granite from our own quarries located in
-            Chamarajanagar, Khammam (Telangana), and Thalavadi. With years of industry expertise, we take pride in
+            Chamarajanagar - Absolute Black, Khammam - Absolute (Telangana), and Thalavadi - Absolute Black. With years of industry expertise, we take pride in
             delivering high-quality granite blocks and slabs trusted by builders, exporters, and architects.
           </p>
           <ul className="my-8 grid gap-4">
