@@ -301,7 +301,7 @@ export const quarries = [
     place: 'Khammam - Absolute',
     state: 'Telangana, India',
     material: 'Absolute Black Granite',
-    application: 'Bulk Blocks & Processing',
+    application: 'Bulk Blocks & Processing , Flamed & Brushed',
     finish: 'Polished, Honed',
     image: khammamImages[0] || serviceSlabs,
     description:
@@ -340,7 +340,7 @@ export const quarries = [
     place: 'Thalavadi - Absolute Black',
     state: 'Tamil Nadu, India',
     material: 'Absolute Black Granite',
-    application: 'Custom Slabs',
+    application: 'Custom Slabs , Flamed & Brushed',
     finish: 'Polished, Flamed',
     image: thalavadiStoneTexture,
     description:

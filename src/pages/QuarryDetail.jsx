@@ -70,15 +70,15 @@ function QuarryDetail() {
 
   return (
     <main className="bg-white">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[1320px] px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
         <div className="mb-8 max-w-4xl">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Our Quarries</p>
-          <h1 className="mt-3 text-4xl font-extrabold leading-tight text-[var(--color-ink)] md:text-5xl lg:text-6xl">
+          <h1 className="mt-3 break-words text-3xl font-extrabold leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl lg:text-6xl">
             {quarry.title}
           </h1>
         </div>
         <section className="relative">
-          <div className="relative aspect-[16/10] max-h-[680px] w-full overflow-hidden lg:w-4/5">
+          <div className="relative aspect-[4/3] max-h-[680px] w-full overflow-hidden sm:aspect-[16/10] lg:w-4/5">
             {sliderImages.map((image, imageIndex) => (
               <img
                 className={`absolute inset-0 h-full w-full object-cover transition duration-700 ${
@@ -92,7 +92,7 @@ function QuarryDetail() {
               />
             ))}
             {sliderImages.length > 1 ? (
-              <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+              <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 gap-2 sm:flex">
                 {sliderImages.map((image, imageIndex) => (
                   <button
                     className={`size-2.5 rounded-full transition ${
@@ -106,29 +106,29 @@ function QuarryDetail() {
                 ))}
               </div>
             ) : null}
+            {sliderImages.length > 1 ? (
+              <div className="absolute bottom-3 left-3 z-10 flex gap-1">
+                <button className="grid size-10 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)] sm:size-11" type="button" aria-label="Previous quarry image" onClick={showPreviousImage}><ArrowLeft size={20} /></button>
+                <button className="grid size-10 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)] sm:size-11" type="button" aria-label="Next quarry image" onClick={showNextImage}><ArrowRight size={20} /></button>
+              </div>
+            ) : null}
           </div>
-          {sliderImages.length > 1 ? (
-            <div className="absolute bottom-3 left-3 flex gap-1">
-              <button className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" type="button" aria-label="Previous quarry image" onClick={showPreviousImage}><ArrowLeft size={20} /></button>
-              <button className="grid size-11 place-items-center bg-[var(--color-accent)] text-white transition hover:bg-[var(--color-accent-dark)]" type="button" aria-label="Next quarry image" onClick={showNextImage}><ArrowRight size={20} /></button>
-            </div>
-          ) : null}
-          <aside className="mt-5 bg-white p-7 shadow-[var(--shadow-premium)] md:absolute md:-bottom-16 md:right-0 md:mt-0 md:w-[340px] lg:right-10">
+          <aside className="mt-5 bg-white p-5 shadow-[var(--shadow-premium)] sm:p-7 md:absolute md:-bottom-16 md:right-0 md:mt-0 md:w-[340px] lg:right-10">
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Location<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.place}</strong></p>
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Material Type<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.material}</strong></p>
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Application<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.application}</strong></p>
             <p className="text-sm font-bold uppercase text-[var(--color-muted)]">Finish<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.finish}</strong></p>
           </aside>
         </section>
-        <section className="max-w-[80%] pt-8 md:pt-20 max-lg:max-w-full">
-          <h2 className="text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">
+        <section className="max-w-[80%] pt-10 md:pt-24 max-lg:max-w-full">
+          <h2 className="text-2xl font-extrabold text-[var(--color-ink)] md:text-4xl">
             {quarry.detailHeading || 'Quarry Overview'}
           </h2>
-          <p className="mt-5 text-lg leading-9 text-[var(--color-text)]">{quarry.description}</p>
+          <p className="mt-5 text-base leading-8 text-[var(--color-text)] md:text-lg md:leading-9">{quarry.description}</p>
           {quarry.detailIntro ? (
-            <p className="mt-5 text-lg leading-9 text-[var(--color-text)]">{quarry.detailIntro}</p>
+            <p className="mt-5 text-base leading-8 text-[var(--color-text)] md:text-lg md:leading-9">{quarry.detailIntro}</p>
           ) : null}
-          <ul className="mt-6 space-y-4 text-lg leading-9 text-[var(--color-text)]">
+          <ul className="mt-6 space-y-4 text-base leading-8 text-[var(--color-text)] md:text-lg md:leading-9">
             {(quarry.detailPoints || []).map((point) => (
               <li className="border-l-4 border-[var(--color-accent)] pl-5" key={point.title}>
                 <strong className="block text-[var(--color-ink)]">{point.title}</strong>
@@ -141,17 +141,17 @@ function QuarryDetail() {
           <div className="mb-8 flex items-end justify-between gap-5 max-sm:flex-col max-sm:items-start">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Gallery</p>
-              <h2 className="mt-2 text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">
+              <h2 className="mt-2 text-2xl font-extrabold text-[var(--color-ink)] md:text-4xl">
                 {quarry.title} Gallery
               </h2>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex w-full flex-wrap gap-3 sm:w-auto">
               {categoryFilters.map((filter) => {
                 const isActive = activeCategory === filter.id
 
                 return (
                   <button
-                    className={`min-h-10 px-5 text-xs font-extrabold uppercase tracking-wide transition ${
+                      className={`min-h-10 flex-1 px-4 text-xs font-extrabold uppercase tracking-wide transition sm:flex-none sm:px-5 ${
                       isActive
                         ? 'bg-[var(--color-accent)] text-white'
                         : 'border border-black text-black hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
@@ -223,7 +223,7 @@ function QuarryDetail() {
           <div className="mb-7 flex items-end justify-between gap-5 max-sm:flex-col max-sm:items-start">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Explore More</p>
-              <h2 className="mt-2 text-3xl font-extrabold text-[var(--color-ink)] md:text-4xl">Remaining Quarries</h2>
+              <h2 className="mt-2 text-2xl font-extrabold text-[var(--color-ink)] md:text-4xl">Remaining Quarries</h2>
             </div>
             <Link className="inline-flex items-center gap-2 text-sm font-extrabold uppercase text-[var(--color-ink)] transition hover:text-[var(--color-accent)]" to="/quarries">
               View All <ArrowRight size={16} />
@@ -237,11 +237,11 @@ function QuarryDetail() {
                 className="group block overflow-hidden bg-white shadow-[var(--shadow-soft)] transition duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-premium)]"
               >
                 <div className="relative">
-                  <img className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105" src={item.image} alt={`${item.place} Absolute Black granite quarry`} loading="lazy" decoding="async" />
+                  <img className="h-[220px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[300px]" src={item.image} alt={`${item.place} Absolute Black granite quarry`} loading="lazy" decoding="async" />
                 </div>
-                <div className="p-7">
-                  <h3 className="text-2xl font-extrabold text-[var(--color-ink)]">{item.title}</h3>
-                  <p className="mt-4 text-base leading-8 text-[var(--color-text)]">{item.description}</p>
+                <div className="p-5 sm:p-7">
+                  <h3 className="text-xl font-extrabold text-[var(--color-ink)] sm:text-2xl">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[var(--color-text)] sm:text-base sm:leading-8">{item.description}</p>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold uppercase text-[var(--color-ink)] transition group-hover:text-[var(--color-accent)]">
                     More Details <ArrowRight size={16} />
                   </span>
