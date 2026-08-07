@@ -5,9 +5,9 @@ import { aboutPoints, images } from '../../data/siteContent'
 function AboutSection({ compact = false }) {
   return (
     <section className="bg-white py-20 lg:py-32">
-      <div className="mx-auto grid w-full max-w-[1280px] items-center gap-12 px-6 lg:grid-cols-[0.95fr_1fr] lg:gap-24">
+      <div className="mx-auto grid w-full max-w-[1280px] items-center gap-12 px-6 lg:grid-cols-[0.95fr_1fr] lg:gap-14 xl:gap-24">
         <div
-          className="min-h-[24rem] bg-[var(--color-tile)] bg-cover bg-center shadow-[var(--shadow-premium)] lg:min-h-[42rem]"
+          className="min-h-[24rem] bg-[var(--color-tile)] bg-cover bg-center shadow-[var(--shadow-premium)] lg:min-h-[34rem] xl:min-h-[42rem]"
           style={{ backgroundImage: `url(${compact ? images.serviceSlabs : images.aboutStone})` }}
           role="img"
           aria-label="Absolute Black granite block"
@@ -16,7 +16,7 @@ function AboutSection({ compact = false }) {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
             About Us
           </p>
-          <h2 className="max-w-xs text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:max-w-2xl sm:text-5xl">
+          <h2 className="max-w-xs text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:max-w-2xl sm:text-4xl xl:text-5xl">
             Welcome to Sri Adiseshu Minerals Pvt Ltd
           </h2>
           <p className="mt-7 max-w-xs text-base leading-8 text-[var(--color-text)] sm:max-w-3xl sm:text-lg">

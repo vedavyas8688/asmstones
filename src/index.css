@@ -36,6 +36,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+span,
+li {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
 button:not(:disabled),
 a[href],
 [role='button']:not(:disabled) {

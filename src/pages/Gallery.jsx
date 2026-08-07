@@ -84,7 +84,7 @@ function Gallery() {
           })}
         </div>
 
-        <div className="mx-auto grid w-full max-w-[1080px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-[1080px] gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {visibleGallery.map((item, index) => (
             <figure className="group relative overflow-hidden bg-[var(--color-line)]" key={`${item.quarry.id}-${item.index}`}>
               <button

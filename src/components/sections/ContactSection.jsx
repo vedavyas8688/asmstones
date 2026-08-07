@@ -7,7 +7,7 @@ function ContactSection() {
     <section className="grid gap-8 bg-black px-6 py-16 text-white lg:grid-cols-[0.8fr_1.2fr] lg:px-[max(1.5rem,calc((100vw-1280px)/2))] lg:py-24">
       <div>
         <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">Contact</p>
-        <h2 className="text-[2rem] font-bold leading-tight text-white sm:text-5xl">Let us discuss your granite requirements.</h2>
+        <h2 className="text-[2rem] font-bold leading-tight text-white sm:text-4xl xl:text-5xl">Let us discuss your granite requirements.</h2>
       </div>
       <div className="grid content-center gap-6 font-bold text-white">
         <div className="flex flex-wrap items-center gap-x-7 gap-y-4">

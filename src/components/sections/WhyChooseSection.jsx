@@ -13,7 +13,7 @@ function WhyChooseSection() {
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-20 pb-52 lg:grid-cols-[1.05fr_1fr] lg:gap-24 lg:py-28 lg:pb-56">
         <div>
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-white sm:text-sm">Why Choose Us</p>
-          <h2 className="max-w-xl text-[2rem] font-bold leading-tight text-white sm:text-5xl">
+          <h2 className="max-w-xl text-[2rem] font-bold leading-tight text-white sm:text-4xl xl:text-5xl">
             Many Reasons to Partner With Us
           </h2>
           <div className="mt-12 grid gap-7">

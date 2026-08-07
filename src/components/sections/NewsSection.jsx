@@ -10,7 +10,7 @@ function NewsSection({ showAction = true }) {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
             Latest Blogs
           </p>
-          <h2 className="text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-5xl">Our latest blogs</h2>
+          <h2 className="text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-4xl xl:text-5xl">Our latest blogs</h2>
         </div>
         <p className="max-w-xl leading-8 text-[var(--color-text)]">
           Stay updated with industry trends, quarry insights, and practical guides to choosing the best granite.
@@ -24,7 +24,7 @@ function NewsSection({ showAction = true }) {
           </Link>
         )}
       </div>
-      <div className="mx-auto grid w-full max-w-[1280px] gap-8 md:grid-cols-2 lg:grid-cols-3" id="news">
+      <div className="mx-auto grid w-full max-w-[1280px] gap-8 md:grid-cols-2 xl:grid-cols-3" id="news">
         {news.map((item) => (
           <article className="relative bg-white shadow-[var(--shadow-premium)]" key={item.title}>
             <Link to={`/blogs/${item.id}`} aria-label={item.title}>

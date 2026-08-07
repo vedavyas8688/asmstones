@@ -11,7 +11,7 @@ function scrollToPageTop() {
 function Logo() {
   return (
     <NavLink to="/" onClick={scrollToPageTop} className="block shrink-0" aria-label="Sri Adiseshu home">
-      <img className="w-[205px] sm:w-[235px] lg:w-[276px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
+      <img className="w-[205px] sm:w-[235px] lg:w-[220px] xl:w-[240px] 2xl:w-[260px]" src={logo} alt="Sri Adiseshu Minerals Pvt Ltd" />
     </NavLink>
   )
 }
@@ -28,8 +28,8 @@ function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 h-[96px] bg-white lg:h-[120px]">
-      <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-8 lg:justify-start lg:px-[42px]">
+    <header className="sticky top-0 z-50 h-[96px] bg-white lg:h-[104px]">
+      <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-8 lg:justify-start lg:px-8 xl:px-[42px]">
         <Logo />
         <button
           className="inline-flex size-11 items-center justify-center border border-[#e7e9ee] bg-white text-[#061f33] lg:hidden"
@@ -40,7 +40,7 @@ function Header() {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
         <nav
-          className={`absolute left-0 right-0 top-[96px] flex-col bg-white shadow-2xl lg:static lg:ml-[100px] lg:flex lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:shadow-none xl:ml-[150px] xl:gap-10 ${
+          className={`absolute left-0 right-0 top-[96px] flex-col bg-white shadow-2xl lg:static lg:ml-8 lg:flex lg:flex-row lg:items-center lg:gap-5 lg:bg-transparent lg:shadow-none xl:ml-10 xl:gap-6 2xl:ml-16 2xl:gap-8 ${
             open ? 'flex' : 'hidden'
           }`}
         >
@@ -56,7 +56,7 @@ function Header() {
                   onMouseLeave={() => setQuarryDropdownOpen(false)}
                 >
                   <div
-                    className={`flex items-center justify-between gap-2 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] ${
+                    className={`flex items-center justify-between gap-2 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:text-[15px] xl:text-[16px] ${
                       isQuarryActive ? 'text-[var(--color-accent)]' : ''
                     }`}
                   >
@@ -102,7 +102,9 @@ function Header() {
                 to={item.path}
                 onClick={closeNavigation}
                 className={({ isActive }) =>
-                  `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 ${
+                  `border-b border-[var(--color-line)] px-5 py-4 text-[16px] font-medium text-[var(--color-ink)] transition hover:text-[var(--color-accent)] lg:border-0 lg:p-0 lg:text-[15px] xl:text-[16px] ${
+                    item.path === '/contact' ? 'xl:hidden' : ''
+                  } ${
                     isActive ? 'text-[var(--color-accent)]' : ''
                   }`
                 }
@@ -125,7 +127,7 @@ function Header() {
             </NavLink>
           </div>
         </nav>
-        <div className="ml-auto hidden items-center gap-5 xl:flex">
+        <div className="ml-auto hidden items-center gap-3 xl:flex 2xl:gap-5">
           <a className="inline-flex items-center gap-1 text-sm font-extrabold text-[var(--color-ink)] transition hover:text-[var(--color-accent)]" href={phoneHref}>
             <span className="grid size-6 place-items-center text-[var(--color-accent)]">
               <Phone size={18} />
@@ -133,7 +135,7 @@ function Header() {
             {site.phone}
           </a>
           <NavLink
-            className="premium-hover-button inline-flex min-h-14 items-center justify-center px-7 text-sm font-extrabold uppercase"
+            className="premium-hover-button inline-flex min-h-14 items-center justify-center px-6 text-sm font-extrabold uppercase 2xl:px-7"
             to="/contact"
             onClick={scrollToPageTop}
           >

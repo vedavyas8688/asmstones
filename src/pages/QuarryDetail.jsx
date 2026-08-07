@@ -73,7 +73,7 @@ function QuarryDetail() {
       <div className="mx-auto w-full max-w-[1320px] px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
         <div className="mb-8 max-w-4xl">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Our Quarries</p>
-          <h1 className="mt-3 break-words text-3xl font-extrabold leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="mt-3 break-words text-3xl font-extrabold leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl xl:text-6xl">
             {quarry.title}
           </h1>
         </div>
@@ -113,14 +113,14 @@ function QuarryDetail() {
               </div>
             ) : null}
           </div>
-          <aside className="mt-5 bg-white p-5 shadow-[var(--shadow-premium)] sm:p-7 md:absolute md:-bottom-16 md:right-0 md:mt-0 md:w-[340px] lg:right-10">
+          <aside className="mt-5 bg-white p-5 shadow-[var(--shadow-premium)] sm:p-7 lg:absolute lg:-bottom-16 lg:right-0 lg:mt-0 lg:w-[340px] xl:right-10">
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Location<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.place}</strong></p>
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Material Type<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.material}</strong></p>
             <p className="mb-5 text-sm font-bold uppercase text-[var(--color-muted)]">Application<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.application}</strong></p>
             <p className="text-sm font-bold uppercase text-[var(--color-muted)]">Finish<br /><strong className="mt-2 block text-base normal-case text-[var(--color-text)]">{quarry.finish}</strong></p>
           </aside>
         </section>
-        <section className="max-w-[80%] pt-10 md:pt-24 max-lg:max-w-full">
+        <section className="pt-10 lg:max-w-[80%] lg:pt-24">
           <h2 className="text-2xl font-extrabold text-[var(--color-ink)] md:text-4xl">
             {quarry.detailHeading || 'Quarry Overview'}
           </h2>
@@ -172,7 +172,7 @@ function QuarryDetail() {
 
           {visibleGalleryItems.length ? (
             <>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleGalleryItems.map((item, index) => (
                   <figure className="group relative overflow-hidden bg-[var(--color-line)]" key={`${quarry.id}-${activeCategory}-${index}`}>
                     <button

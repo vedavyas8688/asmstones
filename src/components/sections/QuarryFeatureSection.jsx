@@ -9,7 +9,7 @@ function QuarryFeatureSection() {
         <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
           Our Quarries
         </p>
-        <h2 className="mx-auto max-w-4xl text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-5xl">
+        <h2 className="mx-auto max-w-4xl text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-4xl xl:text-5xl">
           Three Dedicated Absolute Black Granite Sources
         </h2>
         <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-[var(--color-text)] sm:text-lg">
@@ -20,7 +20,7 @@ function QuarryFeatureSection() {
 
       <div className="mx-auto grid w-full max-w-[1180px] gap-10">
         {quarries.map((quarry, index) => (
-          <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14" key={quarry.id}>
+          <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14" key={quarry.id}>
             <Link className={`group block overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`} to={`/quarries/${quarry.id}`}>
               <img
                 className="aspect-[1.35] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
@@ -34,7 +34,7 @@ function QuarryFeatureSection() {
               <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-[var(--color-accent)]">
                 Quarry {quarry.index}
               </p>
-              <h3 className="text-3xl font-extrabold leading-tight text-[var(--color-ink)] lg:text-5xl">
+              <h3 className="text-3xl font-extrabold leading-tight text-[var(--color-ink)] lg:text-4xl xl:text-5xl">
                 {quarry.title}
               </h3>
               <p className="mt-6 text-lg leading-9 text-[var(--color-text)]">{quarry.description}</p>

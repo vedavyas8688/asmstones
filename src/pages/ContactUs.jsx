@@ -16,11 +16,11 @@ function ContactUs() {
           />
 
           <div>
-            <h1 className="text-[3.4rem] font-extrabold leading-none text-black sm:text-[5rem] lg:text-[6rem]">
+            <h1 className="text-[3.4rem] font-extrabold leading-none text-black sm:text-[4.5rem] xl:text-[6rem]">
               Contact Us
             </h1>
 
-            <div className="mt-10 grid gap-10 border-2 border-black p-7 sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:p-12">
+            <div className="mt-10 grid gap-10 border-2 border-black p-7 sm:p-10 xl:grid-cols-[1fr_0.78fr] lg:p-12">
               <ContactForm />
 
               <aside className="grid content-start gap-8 text-black">

@@ -72,7 +72,7 @@ function ServicesSection({ limit = 3, showIntro = true }) {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
             Our Services
           </p>
-          <h2 className="mx-auto text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-5xl">
+          <h2 className="mx-auto text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:text-4xl xl:text-5xl">
             Premium Granite Solutions You Can Trust
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-[var(--color-text)] sm:text-lg">
@@ -81,26 +81,26 @@ function ServicesSection({ limit = 3, showIntro = true }) {
           </p>
         </div>
       )}
-      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-7 px-5 sm:px-6 lg:grid-cols-[4.2rem_1fr_4.2rem]">
+      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-7 px-5 sm:px-6 xl:grid-cols-[4.2rem_1fr_4.2rem]">
         <button
-          className="hidden size-[4.2rem] place-items-center rounded-full border border-[var(--color-line)] bg-white text-[var(--color-accent)] transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white lg:grid"
+          className="hidden size-[4.2rem] place-items-center rounded-full border border-[var(--color-line)] bg-white text-[var(--color-accent)] transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white xl:grid"
           type="button"
           aria-label="Previous services"
           onClick={() => moveServices(-1)}
         >
           <ArrowLeft size={22} />
         </button>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {visibleServices.map((service) => {
             const Icon = serviceIcons[service.title] || Truck
 
             return (
             <article
-              className="group flex min-h-[500px] flex-col transition duration-500 ease-out sm:min-h-[540px] lg:min-h-[560px]"
+              className="group flex min-h-[500px] flex-col transition duration-500 ease-out sm:min-h-[540px] xl:min-h-[560px]"
               key={`${service.title}-${service.serviceIndex}`}
             >
               <div
-                className="h-[240px] shrink-0 overflow-hidden bg-[var(--color-line)] bg-cover bg-center transition duration-700 ease-out group-hover:scale-[1.025] sm:h-[280px] lg:h-[312px]"
+                className="h-[240px] shrink-0 overflow-hidden bg-[var(--color-line)] bg-cover bg-center transition duration-700 ease-out group-hover:scale-[1.025] sm:h-[280px] xl:h-[312px]"
                 style={{ backgroundImage: `url(${service.image})` }}
                 role="img"
                 aria-label={service.title}
@@ -122,7 +122,7 @@ function ServicesSection({ limit = 3, showIntro = true }) {
           })}
         </div>
         <button
-          className="hidden size-[4.2rem] place-items-center rounded-full border border-[var(--color-line)] bg-white text-[var(--color-accent)] transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white lg:grid"
+          className="hidden size-[4.2rem] place-items-center rounded-full border border-[var(--color-line)] bg-white text-[var(--color-accent)] transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white xl:grid"
           type="button"
           aria-label="Next services"
           onClick={() => moveServices(1)}
@@ -130,7 +130,7 @@ function ServicesSection({ limit = 3, showIntro = true }) {
           <ArrowRight size={22} />
         </button>
       </div>
-      <div className="mx-auto mt-8 flex w-full max-w-[1440px] justify-center gap-4 px-6 lg:hidden">
+      <div className="mx-auto mt-8 flex w-full max-w-[1440px] justify-center gap-4 px-6 xl:hidden">
         <button
           className="grid size-12 place-items-center rounded-full border border-[var(--color-line)] bg-white text-[var(--color-accent)]"
           type="button"

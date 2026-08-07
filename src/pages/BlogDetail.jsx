@@ -137,7 +137,7 @@ function BlogDetail() {
           <span className="mb-5 inline-flex w-fit items-center gap-2 bg-[var(--color-accent)] px-5 py-3 text-xs font-extrabold uppercase tracking-wide">
             <CalendarDays size={15} /> {blog.date}
           </span>
-          <h1 className="max-w-[820px] text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[3.6rem]">
+          <h1 className="max-w-[820px] text-3xl font-extrabold leading-tight sm:text-4xl xl:text-[3.6rem]">
             {blog.title}
           </h1>
           {blog.subtitle ? (
@@ -147,7 +147,7 @@ function BlogDetail() {
         </div>
       </section>
 
-      <section className="min-h-[220svh] px-6 py-20 lg:py-28">
+      <section className="px-6 py-20 lg:py-28">
         <div className="mx-auto grid w-full max-w-[1180px] gap-12 lg:grid-cols-[1fr_340px]">
           <article className="space-y-14">
             {blog.tableOfContents ? (

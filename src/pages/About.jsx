@@ -36,7 +36,7 @@ function About() {
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
           <img className="aspect-[1.42/1] w-full max-w-[620px] justify-self-end object-cover" src={images.serviceSlabs} alt="Premium Absolute Black granite slabs in warehouse" loading="lazy" decoding="async" />
           <div>
-            <h2 className="max-w-xs text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:max-w-2xl sm:text-5xl">
+            <h2 className="max-w-xs text-[2rem] font-bold leading-tight text-[var(--color-ink)] sm:max-w-2xl sm:text-4xl xl:text-5xl">
               Providing Premium Granite Solutions
             </h2>
             <p className="mt-7 max-w-xs text-base leading-8 text-[var(--color-text)] sm:max-w-3xl sm:text-lg">
@@ -64,7 +64,7 @@ function About() {
             <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
               Own Quarry Advantage
             </p>
-            <h2 className="text-[2rem] font-extrabold leading-tight text-[var(--color-ink)] sm:text-5xl">
+            <h2 className="text-[2rem] font-extrabold leading-tight text-[var(--color-ink)] sm:text-4xl xl:text-5xl">
               Built around dependable Absolute Black granite supply
             </h2>
             <p className="mt-6 text-lg leading-9 text-[var(--color-text)]">
@@ -72,7 +72,7 @@ function About() {
               focused material selection, and dependable supply for customers who need consistency at scale.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {quarryAdvantages.map((item, index) => {
               const Icon = item.icon
 
@@ -99,7 +99,7 @@ function About() {
             <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--color-accent)] sm:text-sm">
               Quality Promise
             </p>
-            <h2 className="text-[2rem] font-extrabold leading-tight text-[var(--color-ink)] sm:text-5xl">
+            <h2 className="text-[2rem] font-extrabold leading-tight text-[var(--color-ink)] sm:text-4xl xl:text-5xl">
               Built for dependable granite supply
             </h2>
             <p className="mt-7 text-lg leading-9 text-[var(--color-text)]">
