@@ -40,13 +40,33 @@ import thalavadiStoneTexture from '../assets/images/ThalavadiQuarry/thalavadi-st
 
 const chamarajanagarFeaturedOrder = [
   'chamarajanagar-absolute-black-granite-block-yard-22.webp',
+  'chamarajanagar-granite-rough-blocks-25.webp',
+  'chamarajanagar-black-granite-block-closeup-15.webp',
+  'chamarajanagar-black-granite-rock-face-05.webp',
+  'chamarajanagar-granite-block-inspection-11.webp',
+  'chamarajanagar-granite-block-loading-area-07.webp',
+  'chamarajanagar-granite-material-yard-14.webp',
   'chamarajanagar-granite-block-stockyard-23.webp',
   'chamarajanagar-black-granite-quarry-blocks-24.webp',
-  'chamarajanagar-granite-rough-blocks-25.webp',
 ]
+
+const imageCategoryOverrides = {
+  'chamarajanagar-absolute-black-granite-block-yard-02.webp': 'quarry',
+  'chamarajanagar-black-granite-cut-blocks-19.webp': 'quarry',
+  'khammam-black-granite-contact-banner.webp': 'blocks',
+  'khammam-granite-quarry-extra-road-29.webp': 'blocks',
+  'khammam-granite-quarry-extra-view-35.webp': 'blocks',
+  'khammam-granite-quarry-block-yard.webp': 'quarry',
+  'khammam-granite-block-extra-yard-32.webp': 'quarry',
+}
 
 const getImageCategory = (path) => {
   const name = path.toLowerCase()
+  const filename = name.split('/').pop()
+
+  if (imageCategoryOverrides[filename]) {
+    return imageCategoryOverrides[filename]
+  }
 
   if (name.includes('processing') || name.includes('cutting') || name.includes('machinery') || name.includes('custom') || name.includes('shed') || name.includes('unit')) {
     return 'processing'
@@ -198,7 +218,7 @@ export const quarryGalleryItems = {
     { image: blockClose, category: 'blocks' },
   ],
   khammam: khammamImageItems,
-  thalavadi: [{ image: thalavadiStoneTexture, category: 'quarry' }],
+  thalavadi: [{ image: thalavadiStoneTexture, category: 'blocks' }],
 }
 
 export const quarryFeatureImages = {
