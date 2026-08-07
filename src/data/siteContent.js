@@ -24,15 +24,43 @@ import khammamAboutSlabBanner from '../assets/images/KhammamQuarry/khammam-about
 import khammamSlabsYard from '../assets/images/KhammamQuarry/khammam-slabs-yard.webp'
 import khammamCustomProcessing from '../assets/images/KhammamQuarry/khammam-custom-size-granite-processing.webp'
 import khammamFeature from '../assets/images/KhammamQuarry/khammam-polished-black-granite-feature.webp'
+import khammamExtraBlocks from '../assets/images/KhammamQuarry/khammam-granite-yard-extra-blocks-26.webp'
+import khammamExtraStock from '../assets/images/KhammamQuarry/khammam-black-granite-extra-stock-27.webp'
+import khammamExtraCutting from '../assets/images/KhammamQuarry/khammam-granite-extra-cutting-area-28.webp'
+import khammamExtraRoad from '../assets/images/KhammamQuarry/khammam-granite-quarry-extra-road-29.webp'
+import khammamSupplyYard from '../assets/images/KhammamQuarry/khammam-granite-supply-yard-30.webp'
+import khammamExtraSlabs from '../assets/images/KhammamQuarry/khammam-black-granite-extra-slabs-31.webp'
+import khammamBlockExtraYard from '../assets/images/KhammamQuarry/khammam-granite-block-extra-yard-32.webp'
+import khammamAbsoluteBlackExtraQuarry from '../assets/images/KhammamQuarry/khammam-absolute-black-extra-quarry-33.webp'
+import khammamStoneProcessingExtraView from '../assets/images/KhammamQuarry/khammam-stone-processing-extra-view-34.webp'
 import thalavadiStoneTexture from '../assets/images/ThalavadiQuarry/thalavadi-stone-texture.webp'
+
+const chamarajanagarFeaturedOrder = [
+  'chamarajanagar-absolute-black-granite-block-yard-22.webp',
+  'chamarajanagar-granite-block-stockyard-23.webp',
+  'chamarajanagar-black-granite-quarry-blocks-24.webp',
+  'chamarajanagar-granite-rough-blocks-25.webp',
+]
 
 const galleryImages = Object.entries(
   import.meta.glob('../assets/images/ChamarajanagarQuarry/chamarajanagar-*.webp', { eager: true, import: 'default' }),
 )
-  .sort(([first], [second]) => first.localeCompare(second))
+  .sort(([first], [second]) => {
+    const firstName = first.split('/').pop()
+    const secondName = second.split('/').pop()
+    const firstPriority = chamarajanagarFeaturedOrder.indexOf(firstName)
+    const secondPriority = chamarajanagarFeaturedOrder.indexOf(secondName)
+
+    if (firstPriority !== -1 || secondPriority !== -1) {
+      return (firstPriority === -1 ? Number.MAX_SAFE_INTEGER : firstPriority) - (secondPriority === -1 ? Number.MAX_SAFE_INTEGER : secondPriority)
+    }
+
+    return first.localeCompare(second)
+  })
   .map(([, image]) => image)
 
 const khammamImages = [
+  khammamGallery15,
   khammamGallery18,
   khammamGallery19,
   khammamGallery21,
@@ -42,15 +70,20 @@ const khammamImages = [
   khammamGallery25,
   khammamBlackGraniteDisplay,
   khammamAboutSlabBanner,
+  khammamSlabsYard,
   khammamGallery17,
   khammamCustomProcessing,
   khammamFeature,
+  khammamExtraBlocks,
+  khammamExtraStock,
+  khammamExtraCutting,
+  khammamExtraRoad,
+  khammamSupplyYard,
+  khammamExtraSlabs,
+  khammamBlockExtraYard,
+  khammamAbsoluteBlackExtraQuarry,
+  khammamStoneProcessingExtraView,
 ]
-
-const mixedGalleryImages = Array.from({ length: Math.max(galleryImages.length, khammamImages.length) }, (_, index) => [
-  galleryImages[index],
-  khammamImages[index],
-]).flat().filter(Boolean)
 
 export const site = {
   name: 'Sri Adiseshu',
@@ -104,8 +137,6 @@ export const images = {
 export const quarryImages = {
   chamarajanagar: [
     ...galleryImages,
-    khammamGallery15,
-    khammamSlabsYard,
     quarrySunset,
     serviceSlabs,
     serviceBlocks,
@@ -771,7 +802,7 @@ export const faqs = [
   },
 ]
 
-export const gallery = mixedGalleryImages
+export const gallery = galleryImages
 
 export const contactLocations = [
   {
